@@ -13,17 +13,34 @@
   <body>
     <div class="form">
         <form action="" method="post">
-            <h2>Login Form</h2>
+            <h2>Register Form</h2>
             <p class="msg"></p>
-
+            <div class="form-group">
+                <input type="text" name="nama" class="form-control" placeholder="Masukan Nama" required>
+            </div>
             <div class="form-group">
                 <input type="email" name="email" class="form-control" placeholder="Masukan Email" required>
             </div>
             <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="Masukan Username" required>
+            </div>
+            <div class="form-group">
+                <input type="date" name="ttl" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <select name="gender">
+                    <option value="Laki-laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <input type="password" name="password" class="form-control" placeholder="Masukan Password" required>
             </div>
-            <button class="btn btn-dark fw-bold" name="submit">Login</button>
-            <p>Belum punya akun? <a href="register.php">Daftar disini</a></p>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Konfirmasi Ulang Password" required>
+            </div>
+            <button class="btn btn-dark fw-bold" name="submit">Daftar Sekarang</button>
+            <p>Sudah punya akun? <a href="login.php">Login Disini</a></p>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
