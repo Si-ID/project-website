@@ -13,7 +13,7 @@
 
              // Validasi password cocok
              if ($password !== $cpassword) {
-              $msg = "<div class='alert alert-danger'>Password dan konfirmasi password tidak cocok!</div>";
+              $msg = "<div class='alert alert-dang er'>Passworddan konfirmasi password tidak cocok!</div>";
           } else {
               // Cek apakah email dan username sudah terdaftar
               $check_email = mysqli_query($koneksi, "SELECT * FROM users WHERE email = '$email'");

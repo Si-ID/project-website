@@ -15,6 +15,8 @@
         $_SESSION['email'] = $user['email'];
         $_SESSION['password'] = $user['password'];
         header('Location:index.html');
+      }else {
+        header("Location:login.php");
       }
     }
 
