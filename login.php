@@ -38,7 +38,7 @@
             <p class="msg"></p>
 
             <div class="form-group">
-                <input type="email" name="email" class="form-control" placeholder="Masukan Email" required>
+                <input type="email" name="email" class="form-control" placeholder="Masukan Email" required><br>
             </div>
             <div class="form-group">
                 <input type="password" name="password" class="form-control" placeholder="Masukan Password" required>

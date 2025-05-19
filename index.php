@@ -6,7 +6,7 @@
   <title>Trifthture</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="CSS/style.css">
   <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
@@ -24,7 +24,7 @@
 
     <div class="icons">
       <a href="#" class="fas fa-heart"></a>
-      <a href="#" class="fas fa-shopping-cart"></a>
+      <a href="cart.php" class="fas fa-shopping-cart"></a>
       <a href="login.php" class="fas fa-user"></a>
       <a href="register.php" class="fas fa-user"></a>
     </div>
