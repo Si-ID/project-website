@@ -41,28 +41,12 @@
   </head>
   <body>
      <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <img src="assets/logo.png" alt="" width="50px" height="50px" style="margin-right: 20px;">
-        <a class="navbar-brand" href="#">Thrifture</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
+    <nav class="navbar">
+    <a href="index.php">&larr; Home</a>
+    <div class="brand">thrifture<span>.</span></div>
+    <div class="user-info">
+        <i class="fas fa-user"></i>
+    </div>
     </nav>
     <!-- NAVBAR SELESAI -->
     <?php
@@ -85,7 +69,7 @@
         </form>
     </div>
     <!-- Background IMG -->
-    <img class="bg-img" src="https://images.unsplash.com/photo-1569470451072-68314f596aec?q=100&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="bg_image">
+    <img class="bg-img" src="assets/nav.jpeg" alt="bg_image">
     <!-- Bg-IMG berakhir -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>

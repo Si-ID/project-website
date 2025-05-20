@@ -17,6 +17,24 @@ body{
     z-index: -1;
 }
 
+.navbar {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(255, 51 , 153, .05);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+    .navbar .brand {
+      flex-grow: 1;
+      font-size: 1.2rem;
+    }
+
 .msg {
     color: red;
     font-size: 18px ;

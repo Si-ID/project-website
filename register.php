@@ -58,28 +58,12 @@
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <img src="assets/logo.png" alt="" width="50px" height="50px" style="margin-right: 20px;">
-        <a class="navbar-brand" href="#">Thrifture</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
+    <nav class="navbar">
+    <a href="index.php">&larr; Home</a>
+    <div class="brand">thrifture<span>.</span></div>
+    <div class="user-info">
+        <i class="fas fa-user"></i>
+    </div>
     </nav>
     <!-- NAVBAR SELESAI -->
     

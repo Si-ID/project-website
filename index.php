@@ -28,7 +28,6 @@ $loggedIn = isset($_SESSION['email']);
     </nav>
 
     <div class="icons">
-      <a href="#" class="fas fa-heart"></a>
       <a href="<?php echo $loggedIn ? 'cart.php' : 'login.php?pesan=login_dulu'; ?>" class="fas fa-shopping-cart"></a>
       
       <?php if($loggedIn): ?>
@@ -54,7 +53,7 @@ $loggedIn = isset($_SESSION['email']);
       <h3>Thrifture</h3>
       <span>sustainable style, affordable price</span>
       <p>Discover unique fashion pieces that are stylish, eco-friendly, and budget-friendly. It's time to stand out—without breaking the bank!</p>
-      <a href="#products" class="btn">Shop Now</a>
+      <a href="cart.php" class="btn">Shop Now</a>
     </div>
   </section>
 
@@ -123,11 +122,6 @@ $loggedIn = isset($_SESSION['email']);
       <div class="box">
         <div class="image">
           <img src="assets/baju1.jpg" alt="">
-          <div class="icons">
-            <a href="#" class="fas fa-heart"></a>
-            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'blue blouse\', 50000)"'; ?>>add to cart</a>
-            <a href="#" class="fas fa-share"></a>
-          </div>
         </div>
         <div class="content">
           <h3>blue blouse</h3>
@@ -138,11 +132,6 @@ $loggedIn = isset($_SESSION['email']);
       <div class="box">
         <div class="image">
           <img src="assets/baju2.jpg" alt="">
-          <div class="icons">
-            <a href="#" class="fas fa-heart"></a>
-            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'brown blouse\', 45000)"'; ?>>add to cart</a>
-            <a href="#" class="fas fa-share"></a>
-          </div>
         </div>
         <div class="content">
           <h3>brown blouse</h3>
@@ -153,11 +142,6 @@ $loggedIn = isset($_SESSION['email']);
       <div class="box">
         <div class="image">
           <img src="assets/baju3.jpg" alt="">
-          <div class="icons">
-            <a href="#" class="fas fa-heart"></a>
-            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'blue coquette blouse\', 35000)"'; ?>>add to cart</a>
-            <a href="#" class="fas fa-share"></a>
-          </div>
         </div>
         <div class="content">
           <h3>blue coquette blouse</h3>
@@ -168,11 +152,6 @@ $loggedIn = isset($_SESSION['email']);
       <div class="box">
         <div class="image">
           <img src="assets/baju4.jpg" alt="">
-          <div class="icons">
-            <a href="#" class="fas fa-heart"></a>
-            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'green blouse\', 50000)"'; ?>>add to cart</a>
-            <a href="#" class="fas fa-share"></a>
-          </div>
         </div>
         <div class="content">
           <h3>green blouse</h3>
@@ -183,11 +162,6 @@ $loggedIn = isset($_SESSION['email']);
       <div class="box">
         <div class="image">
           <img src="assets/baju5.jpg" alt="">
-          <div class="icons">
-            <a href="#" class="fas fa-heart"></a>
-            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'pinky shirt blouse\', 50000)"'; ?>>add to cart</a>
-            <a href="#" class="fas fa-share"></a>
-          </div>
         </div>
         <div class="content">
           <h3>pinky shirt blouse</h3>
@@ -198,11 +172,6 @@ $loggedIn = isset($_SESSION['email']);
       <div class="box">
         <div class="image">
           <img src="assets/baju6.jpg" alt="">
-          <div class="icons">
-            <a href="#" class="fas fa-heart"></a>
-            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'white dress\', 25000)"'; ?>>add to cart</a>
-            <a href="#" class="fas fa-share"></a>
-          </div>
         </div>
         <div class="content">
           <h3>white dress</h3>

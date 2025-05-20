@@ -1,38 +1,38 @@
 [
     {
         "id": 1,
-        "name":" LD01 LOUNGE CHAIR",
-        "price": 200,
+        "name":" blue blouse",
+        "price": 50,
         "image": "assets/1.png"
     },
     {
         "id": 2,
-        "name":" LD02 LOUNGE CHAIR",
-        "price": 250,
+        "name":" brown blouse",
+        "price": 45,
         "image": "assets/2.png"
     },
     {
         "id": 3,
-        "name":" LD03 LOUNGE CHAIR",
-        "price": 290,
+        "name":" blue coquette blouse",
+        "price": 45,
         "image": "assets/3.png"
     },
     {
         "id": 4,
-        "name":" LD04 LOUNGE CHAIR",
-        "price": 200,
+        "name":" green blouse",
+        "price": 50,
         "image": "assets/4.png"
     },
     {
         "id": 5,
-        "name":" LD05 LOUNGE CHAIR",
-        "price": 300,
+        "name":" pinky shirt blouse",
+        "price": 50,
         "image": "assets/5.png"
     },
     {
         "id": 6,
-        "name":" LD06 LOUNGE CHAIR",
-        "price": 200,
+        "name":" white blouse",
+        "price": 25,
         "image": "assets/6.png"
     }
 
