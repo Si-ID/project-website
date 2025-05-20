@@ -1,3 +1,8 @@
+<?php
+session_start();
+$loggedIn = isset($_SESSION['email']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +29,23 @@
 
     <div class="icons">
       <a href="#" class="fas fa-heart"></a>
-      <a href="cart.php" class="fas fa-shopping-cart"></a>
-      <a href="login.php" class="fas fa-user"></a>
-      <a href="register.php" class="fas fa-user"></a>
+      <a href="<?php echo $loggedIn ? 'cart.php' : 'login.php?pesan=login_dulu'; ?>" class="fas fa-shopping-cart"></a>
+      
+      <?php if($loggedIn): ?>
+        <div class="user-welcome">
+          <i class="fas fa-user"></i>
+          <?php 
+            include("connect.php");
+            $email = $_SESSION['email'];
+            $query = mysqli_query($koneksi, "SELECT nama FROM users WHERE email='$email'");
+            $user = mysqli_fetch_assoc($query);
+            echo $user['nama'];
+          ?>
+        </div>
+        <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
+      <?php else: ?>
+        <a href="register.php" class="fas fa-user"></a>
+      <?php endif; ?>
     </div>
   </header>
 
@@ -34,8 +53,8 @@
     <div class="content">
       <h3>Thrifture</h3>
       <span>sustainable style, affordable price</span>
-      <p>Discover unique fashion pieces that are stylish, eco-friendly, and budget-friendly. It’s time to stand out—without breaking the bank!</p>
-      <a href="#" class="btn">Shop Now</a>
+      <p>Discover unique fashion pieces that are stylish, eco-friendly, and budget-friendly. It's time to stand out—without breaking the bank!</p>
+      <a href="#products" class="btn">Shop Now</a>
     </div>
   </section>
 
@@ -92,6 +111,13 @@
 
   <section class="products" id="products">
     <h1 class="heading">latest <span>products</span> </h1>
+    
+    <?php if(!$loggedIn): ?>
+    <div style="text-align: center; margin-bottom: 20px; color: #ff7800;">
+      <p>Please <a href="login.php" style="color: #ff7800; text-decoration: underline;">login</a> to add products to your cart!</p>
+    </div>
+    <?php endif; ?>
+    
     <div class="box-container">
 
       <div class="box">
@@ -99,7 +125,7 @@
           <img src="assets/baju1.jpg" alt="">
           <div class="icons">
             <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="cart-btn">add to cart</a>
+            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'blue blouse\', 50000)"'; ?>>add to cart</a>
             <a href="#" class="fas fa-share"></a>
           </div>
         </div>
@@ -114,7 +140,7 @@
           <img src="assets/baju2.jpg" alt="">
           <div class="icons">
             <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="cart-btn">add to cart</a>
+            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'brown blouse\', 45000)"'; ?>>add to cart</a>
             <a href="#" class="fas fa-share"></a>
           </div>
         </div>
@@ -129,7 +155,7 @@
           <img src="assets/baju3.jpg" alt="">
           <div class="icons">
             <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="cart-btn">add to cart</a>
+            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'blue coquette blouse\', 35000)"'; ?>>add to cart</a>
             <a href="#" class="fas fa-share"></a>
           </div>
         </div>
@@ -144,7 +170,7 @@
           <img src="assets/baju4.jpg" alt="">
           <div class="icons">
             <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="cart-btn">add to cart</a>
+            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'green blouse\', 50000)"'; ?>>add to cart</a>
             <a href="#" class="fas fa-share"></a>
           </div>
         </div>
@@ -159,7 +185,7 @@
           <img src="assets/baju5.jpg" alt="">
           <div class="icons">
             <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="cart-btn">add to cart</a>
+            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'pinky shirt blouse\', 50000)"'; ?>>add to cart</a>
             <a href="#" class="fas fa-share"></a>
           </div>
         </div>
@@ -174,7 +200,7 @@
           <img src="assets/baju6.jpg" alt="">
           <div class="icons">
             <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="cart-btn">add to cart</a>
+            <a href="<?php echo $loggedIn ? '#' : 'login.php?pesan=login_dulu'; ?>" class="cart-btn" <?php if($loggedIn) echo 'onclick="addToCart(\'white dress\', 25000)"'; ?>>add to cart</a>
             <a href="#" class="fas fa-share"></a>
           </div>
         </div>
@@ -242,5 +268,18 @@
 
   </section>
   
+  <script>
+  function addToCart(productName, price) {
+    // This is a simple function to handle adding to cart
+    // In a real implementation, you might use AJAX to save to server or localStorage
+    alert(productName + " added to your cart!");
+    
+    // Here you could implement logic to add to cart using AJAX or localStorage
+    // For example:
+    // let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    // cart.push({name: productName, price: price, quantity: 1});
+    // localStorage.setItem('cart', JSON.stringify(cart));
+  }
+  </script>
 </body>
 </html>

@@ -1,16 +1,47 @@
+<?php
+session_start();
+if (!isset($_SESSION['email'])) {
+    header("Location: login.php?pesan=login_dulu");
+    exit;
+}
+
+// Get user information
+include("connect.php");
+$email = $_SESSION['email'];
+$query = mysqli_query($koneksi, "SELECT nama FROM users WHERE email='$email'");
+$user = mysqli_fetch_assoc($query);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopping Cart - Thrifture</title>
     <link rel="stylesheet" href="CSS/cart.css">
+    <style>
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-right: 20px;
+            color: white;
+        }
+        
+        .user-info i {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body class="">
 
 <nav class="navbar">
     <a href="index.php">&larr; Home</a>
     <div class="brand">thrifture<span>.</span></div>
+    <div class="user-info">
+        <i class="fas fa-user"></i> <?php echo $user['nama']; ?>
+    </div>
 </nav>
     
     <div class="container">
@@ -38,6 +69,7 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

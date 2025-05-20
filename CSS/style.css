@@ -199,6 +199,35 @@ header .fa-bars{
     font-size: 1.7rem
   }
 }
+    .user-welcome {
+      color: #ff7800; /* Changed from white to match brand color */
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      font-weight: 600; /* Added font weight to make it more visible */
+    }
+    
+    .user-welcome i {
+      margin-right: 5px;
+    }
+    
+    .logout-btn {
+      color: #666;
+      font-size: 1.5rem; /* Match other icons */
+      cursor: pointer;
+      margin-left: 0.5rem;
+      transition: .2s linear;
+    }
+    
+    .logout-btn:hover {
+      color: #ff7800;
+      transform: rotate(360deg);
+    }
+    
+    .icons {
+      display: flex;
+      align-items: center;
+    }
 
 @media (max-width:450px){
   html{
