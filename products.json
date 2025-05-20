@@ -3,37 +3,37 @@
         "id": 1,
         "name":" blue blouse",
         "price": 50,
-        "image": "assets/1.png"
+        "image": "assets/baju1.png"
     },
     {
         "id": 2,
         "name":" brown blouse",
         "price": 45,
-        "image": "assets/2.png"
+        "image": "assets/baju2.png"
     },
     {
         "id": 3,
         "name":" blue coquette blouse",
         "price": 45,
-        "image": "assets/3.png"
+        "image": "assets/baju3.png"
     },
     {
         "id": 4,
         "name":" green blouse",
         "price": 50,
-        "image": "assets/4.png"
+        "image": "assets/baju4.png"
     },
     {
         "id": 5,
         "name":" pinky shirt blouse",
         "price": 50,
-        "image": "assets/5.png"
+        "image": "assets/baju5.png"
     },
     {
         "id": 6,
         "name":" white blouse",
         "price": 25,
-        "image": "assets/6.png"
+        "image": "assets/baju6.png"
     }
 
 ]

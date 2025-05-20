@@ -199,17 +199,32 @@ header .fa-bars{
     font-size: 1.7rem
   }
 }
-    .user-welcome {
-      color: #ff7800; /* Changed from white to match brand color */
-      margin-right: 10px;
-      display: flex;
-      align-items: center;
-      font-weight: 600; /* Added font weight to make it more visible */
-    }
-    
-    .user-welcome i {
-      margin-right: 5px;
-    }
+   
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.icon-btn, .user-welcome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.user-welcome span {
+  color: orange;
+  font-weight: 600;
+}
+
+.icon-btn i, .user-welcome i {
+  font-size: 18px;
+}
+
     
     .logout-btn {
       color: #666;

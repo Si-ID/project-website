@@ -42,11 +42,8 @@
   <body>
      <!-- NAVBAR -->
     <nav class="navbar">
-    <a href="index.php">&larr; Home</a>
+    <a href="index.php" class="home-link">&larr; Home</a>
     <div class="brand">thrifture<span>.</span></div>
-    <div class="user-info">
-        <i class="fas fa-user"></i>
-    </div>
     </nav>
     <!-- NAVBAR SELESAI -->
     <?php
@@ -59,7 +56,7 @@
             <p class="msg"></p>
 
             <div class="form-group">
-                <input type="email" name="email" class="form-control" placeholder="Masukan Email" required><br>
+                <input type="email" name="email" class="form-control" placeholder="Masukan Email" required>
             </div>
             <div class="form-group">
                 <input type="password" name="password" class="form-control" placeholder="Masukan Password" required>

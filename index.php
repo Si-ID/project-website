@@ -33,6 +33,7 @@ $loggedIn = isset($_SESSION['email']);
       <?php if($loggedIn): ?>
         <div class="user-welcome">
           <i class="fas fa-user"></i>
+          <span>
           <?php 
             include("connect.php");
             $email = $_SESSION['email'];
@@ -40,6 +41,7 @@ $loggedIn = isset($_SESSION['email']);
             $user = mysqli_fetch_assoc($query);
             echo $user['nama'];
           ?>
+          <span>
         </div>
         <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
       <?php else: ?>
@@ -48,7 +50,7 @@ $loggedIn = isset($_SESSION['email']);
     </div>
   </header>
 
-  <section class="home" id="home">
+  <section class="home" id="home" style="background: url('assets/bg.png') no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center;">>
     <div class="content">
       <h3>Thrifture</h3>
       <span>sustainable style, affordable price</span>
@@ -121,7 +123,7 @@ $loggedIn = isset($_SESSION['email']);
 
       <div class="box">
         <div class="image">
-          <img src="assets/baju1.jpg" alt="">
+          <img src="assets/baju1.png" alt="">
         </div>
         <div class="content">
           <h3>blue blouse</h3>
@@ -131,7 +133,7 @@ $loggedIn = isset($_SESSION['email']);
 
       <div class="box">
         <div class="image">
-          <img src="assets/baju2.jpg" alt="">
+          <img src="assets/baju2.png" alt="">
         </div>
         <div class="content">
           <h3>brown blouse</h3>
@@ -141,7 +143,7 @@ $loggedIn = isset($_SESSION['email']);
 
       <div class="box">
         <div class="image">
-          <img src="assets/baju3.jpg" alt="">
+          <img src="assets/baju3.png" alt="">
         </div>
         <div class="content">
           <h3>blue coquette blouse</h3>
@@ -151,7 +153,7 @@ $loggedIn = isset($_SESSION['email']);
 
       <div class="box">
         <div class="image">
-          <img src="assets/baju4.jpg" alt="">
+          <img src="assets/baju4.png" alt="">
         </div>
         <div class="content">
           <h3>green blouse</h3>
@@ -161,7 +163,7 @@ $loggedIn = isset($_SESSION['email']);
 
       <div class="box">
         <div class="image">
-          <img src="assets/baju5.jpg" alt="">
+          <img src="assets/baju5.png" alt="">
         </div>
         <div class="content">
           <h3>pinky shirt blouse</h3>
@@ -171,7 +173,7 @@ $loggedIn = isset($_SESSION['email']);
 
       <div class="box">
         <div class="image">
-          <img src="assets/baju6.jpg" alt="">
+          <img src="assets/baju6.png" alt="">
         </div>
         <div class="content">
           <h3>white dress</h3>

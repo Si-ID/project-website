@@ -20,19 +20,6 @@ $user = mysqli_fetch_assoc($query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - Thrifture</title>
     <link rel="stylesheet" href="CSS/cart.css">
-    <style>
-        .user-info {
-            display: flex;
-            align-items: center;
-            margin-left: auto;
-            margin-right: 20px;
-            color: white;
-        }
-        
-        .user-info i {
-            margin-right: 5px;
-        }
-    </style>
 </head>
 <body class="">
 

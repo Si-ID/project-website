@@ -1,20 +1,17 @@
-* {
-
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     text-decoration: none;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 body{
-    overflow-x: hidden;
-}
-.bg-img {
-    height: 100vh;
-    width: 100vw;
-    object-fit:cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf4e3;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
@@ -35,10 +32,25 @@ body{
       font-size: 1.2rem;
     }
 
+.brand{
+  text-align: center;
+  font-size: 4rem;
+  color:#333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+
+.brand span{
+  color: brown;
+}
+
+
 .msg {
     color: red;
     font-size: 18px ;
 }
+
 .form {
     display: flex;
     align-items:center ;
@@ -46,6 +58,8 @@ body{
     min-height: 100vh;
     
 }
+
+
 
 .form form {
     background-color: grey;
@@ -55,14 +69,175 @@ body{
     width: 28rem;
 }
 
-
-a {
-    color: white;
-}
-a:visited {
-    color: white;
-}
 a :hover {
     color: blue;
 }
+ */
 
+ /* Reset dan dasar */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f2f2f2;
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* Navbar sederhana */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 51 , 153, .05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.navbar .brand {
+    flex-grow: 1;
+    font-size: 1.2rem;
+}
+    
+.home-link {
+    padding-left: 20px; 
+}
+
+
+svg{
+    width: 30px;
+}
+
+.brand{
+  text-align: center;
+  font-size: 4rem;
+  color:#333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+
+.brand span{
+  color: brown;
+}
+
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  z-index: 2;
+  position: relative;
+}
+
+
+form {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 25px;
+  width: 450px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+
+form h2 {
+  background-color: brown;
+  color: white;
+  border-radius: 20px 20px 0 0;
+  padding: 12px;
+  margin: -40px -30px 30px -30px;
+  font-size: 1.3rem;
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #0a0f2c;
+  box-shadow: 0 0 0 2px rgba(10, 15, 44, 0.1);
+}
+
+
+button[name="submit"] {
+  width: 100%;
+  background-color: brown;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+button[name="submit"]:hover {
+  background-color: #1c264b;
+}
+
+
+form p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+form p a {
+  color: blue;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+form p a:hover {
+  text-decoration: underline;
+}
+
+.bg-img {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+  opacity: 50%;
+}
+
+.msg {
+  font-size: 0.85rem;
+  color: red;
+  margin-bottom: 10px;
+  text-align: center;
+}

@@ -47,23 +47,12 @@
     <title>Form Register</title>
     <link rel="stylesheet" href="CSS/form.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-      <style>
-    a {
-      color: blue;
-    }
-    a:hover {
-      color: white;
-    }
-  </style>
   </head>
   <body>
     <!-- NAVBAR -->
     <nav class="navbar">
-    <a href="index.php">&larr; Home</a>
+    <a href="index.php" class="home-link">&larr; Home</a>
     <div class="brand">thrifture<span>.</span></div>
-    <div class="user-info">
-        <i class="fas fa-user"></i>
-    </div>
     </nav>
     <!-- NAVBAR SELESAI -->
     
@@ -101,8 +90,9 @@
         </form>
     </div>
     <!-- Background IMG -->
-    <img class="bg-img" src="https://images.unsplash.com/photo-1569470451072-68314f596aec?q=100&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="bg_image">
+    <img class="bg-img" src="assets/nav.jpeg" alt="bg_image">
     <!-- Bg-IMG berakhir -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
   </body>
 </html>
