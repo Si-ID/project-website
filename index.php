@@ -5,6 +5,7 @@ $loggedIn = isset($_SESSION['email']);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +15,7 @@ $loggedIn = isset($_SESSION['email']);
   <link rel="stylesheet" href="CSS/style.css">
   <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
+
 <body>
   <header>
     <input type="checkbox" name="" id="toggler">
@@ -28,20 +30,16 @@ $loggedIn = isset($_SESSION['email']);
     </nav>
 
     <div class="icons">
+
+      <?= var_dump($_SESSION) ?>
       <a href="<?php echo $loggedIn ? 'cart.php' : 'login.php?pesan=login_dulu'; ?>" class="fas fa-shopping-cart"></a>
-      
-      <?php if($loggedIn): ?>
+
+      <?php if ($loggedIn): ?>
         <div class="user-welcome">
           <i class="fas fa-user"></i>
           <span>
-          <?php 
-            include("connect.php");
-            $email = $_SESSION['email'];
-            $query = mysqli_query($koneksi, "SELECT nama FROM users WHERE email='$email'");
-            $user = mysqli_fetch_assoc($query);
-            echo $user['nama'];
-          ?>
-          <span>
+            <?= $_SESSION['username'] ?>
+            <span>
         </div>
         <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
       <?php else: ?>
@@ -50,11 +48,14 @@ $loggedIn = isset($_SESSION['email']);
     </div>
   </header>
 
-  <section class="home" id="home" style="background: url('assets/bg.png') no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center;">>
+  <section class="home" id="home"
+    style="background: url('assets/bg.png') no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center;">
+    >
     <div class="content">
       <h3>Thrifture</h3>
       <span>sustainable style, affordable price</span>
-      <p>Discover unique fashion pieces that are stylish, eco-friendly, and budget-friendly. It's time to stand out—without breaking the bank!</p>
+      <p>Discover unique fashion pieces that are stylish, eco-friendly, and budget-friendly. It's time to stand
+        out—without breaking the bank!</p>
       <a href="cart.php" class="btn">Shop Now</a>
     </div>
   </section>
@@ -63,16 +64,20 @@ $loggedIn = isset($_SESSION['email']);
     <h1 class="heading"><span>about </span>us</h1>
     <div class="row">
       <div class="video-container">
-      <video src="assets/vid.mp4" loop autoplay muted></video>
-      <h3>best thrifting shop</h3>
-    </div>
+        <video src="assets/vid.mp4" loop autoplay muted></video>
+        <h3>best thrifting shop</h3>
+      </div>
 
-    <div class="content">
-      <h3>why choose us?</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto fugiat repudiandae blanditiis, vero nulla veniam aliquid maiores saepe, ut deserunt pariatur sapiente magni optio! Consectetur eligendi asperiores delectus blanditiis optio?</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae accusantium delectus nostrum laboriosam beatae! Ab dolor autem a itaque ex, alias architecto placeat excepturi dolorem sapiente. Nam maxime aspernatur nesciunt.</p>
-      <a href="#" class="btn">learn more</a>
-    </div>
+      <div class="content">
+        <h3>why choose us?</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto fugiat repudiandae blanditiis, vero nulla
+          veniam aliquid maiores saepe, ut deserunt pariatur sapiente magni optio! Consectetur eligendi asperiores
+          delectus blanditiis optio?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae accusantium delectus nostrum laboriosam
+          beatae! Ab dolor autem a itaque ex, alias architecto placeat excepturi dolorem sapiente. Nam maxime aspernatur
+          nesciunt.</p>
+        <a href="#" class="btn">learn more</a>
+      </div>
     </div>
   </section>
 
@@ -112,13 +117,14 @@ $loggedIn = isset($_SESSION['email']);
 
   <section class="products" id="products">
     <h1 class="heading">latest <span>products</span> </h1>
-    
-    <?php if(!$loggedIn): ?>
-    <div style="text-align: center; margin-bottom: 20px; color: #ff7800;">
-      <p>Please <a href="login.php" style="color: #ff7800; text-decoration: underline;">login</a> to add products to your cart!</p>
-    </div>
+
+    <?php if (!$loggedIn): ?>
+      <div style="text-align: center; margin-bottom: 20px; color: #ff7800;">
+        <p>Please <a href="login.php" style="color: #ff7800; text-decoration: underline;">login</a> to add products to
+          your cart!</p>
+      </div>
     <?php endif; ?>
-    
+
     <div class="box-container">
 
       <div class="box">
@@ -201,56 +207,57 @@ $loggedIn = isset($_SESSION['email']);
 
 
     <section class="footer">
-        <div class="footer-box">
-          <h3>quick links</h3>
-          <a href="#">home</a>
-          <a href="#">about</a>
-          <a href="#">products</a>
-          <a href="#">contact</a>
-        </div>
+      <div class="footer-box">
+        <h3>quick links</h3>
+        <a href="#">home</a>
+        <a href="#">about</a>
+        <a href="#">products</a>
+        <a href="#">contact</a>
+      </div>
 
-        <div class="footer-box">
-          <h3>extra links</h3>
-          <a href="#">my account</a>
-          <a href="#">my order</a>
-          <a href="#">my favorite</a>
-        </div>
+      <div class="footer-box">
+        <h3>extra links</h3>
+        <a href="#">my account</a>
+        <a href="#">my order</a>
+        <a href="#">my favorite</a>
+      </div>
 
-        <div class="footer-box">
-          <h3>locations</h3>
-          <a href="#">bekasi</a>
-          <a href="#">ciamis</a>
-          <a href="#">malang</a>
-          <a href="#">cikarang</a>
-        </div>
+      <div class="footer-box">
+        <h3>locations</h3>
+        <a href="#">bekasi</a>
+        <a href="#">ciamis</a>
+        <a href="#">malang</a>
+        <a href="#">cikarang</a>
+      </div>
 
-        
-        <div class="footer-box">
-          <h3>contact info</h3>
-          <a href="#">+123-456-789</a>
-          <a href="#">example@gmail.com</a>
-          <a href="#">seturan, yogyakarta - 50013</a>
-          <img src="" alt="">
-        </div>
+
+      <div class="footer-box">
+        <h3>contact info</h3>
+        <a href="#">+123-456-789</a>
+        <a href="#">example@gmail.com</a>
+        <a href="#">seturan, yogyakarta - 50013</a>
+        <img src="" alt="">
+      </div>
 
       </div>
 
     </section>
 
   </section>
-  
+
   <script>
-  function addToCart(productName, price) {
-    // This is a simple function to handle adding to cart
-    // In a real implementation, you might use AJAX to save to server or localStorage
-    alert(productName + " added to your cart!");
-    
-    // Here you could implement logic to add to cart using AJAX or localStorage
-    // For example:
-    // let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    // cart.push({name: productName, price: price, quantity: 1});
-    // localStorage.setItem('cart', JSON.stringify(cart));
-  }
+    function addToCart(productName, price) {
+      // This is a simple function to handle adding to cart
+      // In a real implementation, you might use AJAX to save to server or localStorage
+      alert(productName + " added to your cart!");
+
+      // Here you could implement logic to add to cart using AJAX or localStorage
+      // For example:
+      // let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      // cart.push({name: productName, price: price, quantity: 1});
+      // localStorage.setItem('cart', JSON.stringify(cart));
+    }
   </script>
 </body>
+
 </html>
