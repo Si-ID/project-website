@@ -1,146 +1,155 @@
-let listProductHTML = document.querySelector('.listProduct');
-let listCartHTML = document.querySelector('.listCart');
-let iconCart = document.querySelector('.icon-cart');
-let iconCartSpan = document.querySelector('.icon-cart span');
-let body = document.querySelector('body');
-let closeCart = document.querySelector('.close');
-let products = [];
-let cart = [];
+// Initialize variables
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+const listCartHTML = document.querySelector('.listCart');
+const iconCartSpan = document.getElementById('cartCount');
+const checkOutBtn = document.getElementById('checkOutBtn');
 
+// Toggle cart tab
+document.querySelector('.icon-cart').addEventListener('click', () => {
+    document.body.classList.toggle('showCart');
+});
 
-iconCart.addEventListener('click', () => {
-    body.classList.toggle('showCart');
-})
-closeCart.addEventListener('click', () => {
-    body.classList.toggle('showCart');
-})
+document.querySelector('.close').addEventListener('click', () => {
+    document.body.classList.remove('showCart');
+});
 
-    const addDataToHTML = () => {
-    // remove datas default from HTML
-
-        // add new datas
-        if(products.length > 0) // if has data
-        {
-            products.forEach(product => {
-                let newProduct = document.createElement('div');
-                newProduct.dataset.id = product.id;
-                newProduct.classList.add('item');
-                newProduct.innerHTML = 
-                `<img src="${product.image}" alt="">
-                <h2>${product.name}</h2>
-                <div class="price">Rp.${product.price}</div>
-                <button class="addCart">Add To Cart</button>`;
-                listProductHTML.appendChild(newProduct);
-            });
-        }
+// Add to cart functionality
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('addCart')) {
+        const button = event.target;
+        const id = parseInt(button.getAttribute('data-id'));
+        const name = button.getAttribute('data-name');
+        const price = parseInt(button.getAttribute('data-price'));
+        const stock = parseInt(button.getAttribute('data-stock'));
+        
+        addToCart(id, name, price, stock);
     }
-    listProductHTML.addEventListener('click', (event) => {
-        let positionClick = event.target;
-        if(positionClick.classList.contains('addCart')){
-            let id_product = positionClick.parentElement.dataset.id;
-            addToCart(id_product);
+});
+
+function addToCart(id, name, price, stock) {
+    const existingItem = cart.find(item => item.id === id);
+    
+    if (existingItem) {
+        if (existingItem.quantity < stock) {
+            existingItem.quantity++;
+        } else {
+            alert('Stok tidak mencukupi');
+            return;
         }
-    })
-const addToCart = (product_id) => {
-    let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
-    if(cart.length <= 0){
-        cart = [{
-            product_id: product_id,
-            quantity: 1
-        }];
-    }else if(positionThisProductInCart < 0){
+    } else {
         cart.push({
-            product_id: product_id,
+            id: id,
+            name: name,
+            price: price,
             quantity: 1
         });
-    }else{
-        cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + 1;
     }
-    addCartToHTML();
-    addCartToMemory();
+    
+    updateCart();
+    document.body.classList.add('showCart');
 }
-const addCartToMemory = () => {
+
+function updateCart() {
+    // Update cart count
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    iconCartSpan.textContent = totalItems;
+    
+    // Update cart display
+    let html = '';
+    cart.forEach(item => {
+        html += `
+        <div class="item" data-id="${item.id}">
+            <div class="image">
+                <img src="assets/placeholder.jpg" alt="${item.name}">
+            </div>
+            <div class="name">${item.name}</div>
+            <div class="totalPrice">Rp${(item.price * item.quantity).toLocaleString('id-ID')}</div>
+            <div class="quantity">
+                <span class="minus" data-id="${item.id}"><</span>
+                <span>${item.quantity}</span>
+                <span class="plus" data-id="${item.id}">></span>
+            </div>
+        </div>
+        `;
+    });
+    
+    listCartHTML.innerHTML = html || '<p>Keranjang kosong</p>';
+    
+    // Add event listeners to quantity controls
+    document.querySelectorAll('.minus').forEach(button => {
+        button.addEventListener('click', function() {
+            const id = parseInt(this.getAttribute('data-id'));
+            changeQuantity(id, 'minus');
+        });
+    });
+    
+    document.querySelectorAll('.plus').forEach(button => {
+        button.addEventListener('click', function() {
+            const id = parseInt(this.getAttribute('data-id'));
+            changeQuantity(id, 'plus');
+        });
+    });
+    
+    // Save to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 }
-const addCartToHTML = () => {
-    listCartHTML.innerHTML = '';
-    let totalQuantity = 0;
-    if(cart.length > 0){
-        cart.forEach(item => {
-            totalQuantity = totalQuantity +  item.quantity;
-            let newItem = document.createElement('div');
-            newItem.classList.add('item');
-            newItem.dataset.id = item.product_id;
 
-            let positionProduct = products.findIndex((value) => value.id == item.product_id);
-            let info = products[positionProduct];
-            listCartHTML.appendChild(newItem);
-            newItem.innerHTML = `
-            <div class="image">
-                    <img src="${info.image}">
-                </div>
-                <div class="name">
-                ${info.name}
-                </div>
-                <div class="totalPrice">Rp.${info.price * item.quantity}</div>
-                <div class="quantity">
-                    <span class="minus"><</span>
-                    <span>${item.quantity}</span>
-                    <span class="plus">></span>
-                </div>
-            `;
-        })
+function changeQuantity(id, action) {
+    const itemIndex = cart.findIndex(item => item.id === id);
+    
+    if (itemIndex !== -1) {
+        if (action === 'plus') {
+            // Check stock before increasing quantity
+            const productElement = document.querySelector(`.item[data-id="${id}"] .addCart`);
+            const stock = parseInt(productElement.getAttribute('data-stock'));
+            
+            if (cart[itemIndex].quantity < stock) {
+                cart[itemIndex].quantity++;
+            } else {
+                alert('Stok tidak mencukupi');
+                return;
+            }
+        } else {
+            if (cart[itemIndex].quantity > 1) {
+                cart[itemIndex].quantity--;
+            } else {
+                cart.splice(itemIndex, 1);
+            }
+        }
+        updateCart();
     }
-    iconCartSpan.innerText = totalQuantity;
 }
 
-listCartHTML.addEventListener('click', (event) => {
-    let positionClick = event.target;
-    if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
-        let product_id = positionClick.parentElement.parentElement.dataset.id;
-        let type = 'minus';
-        if(positionClick.classList.contains('plus')){
-            type = 'plus';
-        }
-        changeQuantityCart(product_id, type);
+// Checkout functionality
+checkOutBtn.addEventListener('click', () => {
+    if (cart.length === 0) {
+        alert('Keranjang belanja kosong');
+        return;
     }
-})
-const changeQuantityCart = (product_id, type) => {
-    let positionItemInCart = cart.findIndex((value) => value.product_id == product_id);
-    if(positionItemInCart >= 0){
-        let info = cart[positionItemInCart];
-        switch (type) {
-            case 'plus':
-                cart[positionItemInCart].quantity = cart[positionItemInCart].quantity + 1;
-                break;
-        
-            default:
-                let changeQuantity = cart[positionItemInCart].quantity - 1;
-                if (changeQuantity > 0) {
-                    cart[positionItemInCart].quantity = changeQuantity;
-                }else{
-                    cart.splice(positionItemInCart, 1);
-                }
-                break;
-        }
-    }
-    addCartToHTML();
-    addCartToMemory();
-}
-
-const initApp = () => {
-    // get data product
-    fetch('products.json')
+    
+    // Send cart data to server
+    fetch('checkout_process.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({cart: cart})
+    })
     .then(response => response.json())
     .then(data => {
-        products = data;
-        addDataToHTML();
-
-        // get data cart from memory
-        if(localStorage.getItem('cart')){
-            cart = JSON.parse(localStorage.getItem('cart'));
-            addCartToHTML();
+        if (data.success) {
+            // Redirect to receipt page
+            window.location.href = 'struk.php';
+            // Clear cart
+            cart = [];
+            localStorage.removeItem('cart');
+            updateCart();
         }
     })
-}
-initApp();
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+// Initialize cart on page load
+updateCart();
