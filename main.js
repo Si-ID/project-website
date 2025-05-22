@@ -121,35 +121,35 @@ function changeQuantity(id, action) {
 }
 
 // Checkout functionality
-checkOutBtn.addEventListener('click', () => {
-    if (cart.length === 0) {
-        alert('Keranjang belanja kosong');
-        return;
-    }
+// checkOutBtn.addEventListener('click', () => {
+//     if (cart.length === 0) {
+//         alert('Keranjang belanja kosong');
+//         return;
+//     }
     
-    // Send cart data to server
-    fetch('checkout_process.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({cart: cart})
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Redirect to receipt page
-            window.location.href = 'struk.php';
-            // Clear cart
-            cart = [];
-            localStorage.removeItem('cart');
-            updateCart();
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
+//     // Send cart data to server
+//     fetch('checkout_process.php', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({cart: cart})
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         if (data.success) {
+//             // Redirect to receipt page
+//             window.location.href = 'struk.php';
+//             // Clear cart
+//             cart = [];
+//             localStorage.removeItem('cart');
+//             updateCart();
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// });
 
 // Initialize cart on page load
 updateCart();

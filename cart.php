@@ -12,6 +12,16 @@ $user = mysqli_fetch_assoc($query);
 
 // Get products from database
 $products = mysqli_query($koneksi, "SELECT * FROM baju WHERE stok > 0");
+
+// Image mapping
+$product_images = [
+    1 => 'assets/baju1.png',
+    2 => 'assets/baju2.png',
+    3 => 'assets/baju3.png',
+    4 => 'assets/baju4.png',
+    5 => 'assets/baju5.png',
+    6 => 'assets/baju6.png'
+];
 ?>
 
 <!DOCTYPE html>
@@ -46,14 +56,16 @@ $products = mysqli_query($koneksi, "SELECT * FROM baju WHERE stok > 0");
     <div class="listProduct">
         <?php while($product = mysqli_fetch_assoc($products)): ?>
         <div class="item" data-id="<?php echo $product['id_baju']; ?>">
-            <img src="assets/baju1.png" alt="<?php echo htmlspecialchars($product['nama_baju']); ?>">
+            <img src="<?php echo $product_images[$product['id_baju']] ?? 'assets/placeholder.jpg'; ?>" 
+                 alt="<?php echo htmlspecialchars($product['nama_baju']); ?>">
             <h2><?php echo htmlspecialchars($product['nama_baju']); ?></h2>
             <div class="price">Rp<?php echo number_format($product['harga'], 0, ',', '.'); ?></div>
             <button class="addCart" 
                     data-id="<?php echo $product['id_baju']; ?>"
                     data-name="<?php echo htmlspecialchars($product['nama_baju']); ?>"
                     data-price="<?php echo $product['harga']; ?>"
-                    data-stock="<?php echo $product['stok']; ?>">
+                    data-stock="<?php echo $product['stok']; ?>"
+                    data-image="<?php echo $product_images[$product['id_baju']] ?? 'assets/placeholder.jpg'; ?>">
                 Add To Cart
             </button>
         </div>
@@ -68,10 +80,19 @@ $products = mysqli_query($koneksi, "SELECT * FROM baju WHERE stok > 0");
     </div>
     <div class="btn">
         <button class="close">CLOSE</button>
-        <button class="checkOut" id="checkOutBtn">Check Out</button>
+        <form method="post" action="checkout_process.php">
+            <input type="hidden" name="cart_data" id="cartDataInput">
+            <button type="submit" class="checkOut">Check Out</button>
+        </form>
     </div>
 </div>
 
+<script>
+// Fungsi untuk update form sebelum submit
+document.querySelector('form').addEventListener('submit', function(e) {
+    document.getElementById('cartDataInput').value = JSON.stringify(cart);
+});
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 <script src="main.js"></script>
 </body>
