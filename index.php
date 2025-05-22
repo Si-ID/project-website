@@ -1,6 +1,13 @@
 <?php
 session_start();
 $loggedIn = isset($_SESSION['email']);
+
+if($loggedIn) {
+    include("connect.php");
+    $email = $_SESSION['email'];
+    $query = mysqli_query($koneksi, "SELECT id_user, nama FROM users WHERE email='$email'");
+    $user = mysqli_fetch_assoc($query);
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,19 +36,11 @@ $loggedIn = isset($_SESSION['email']);
 
     <div class="icons">
       <a href="<?php echo $loggedIn ? 'cart.php' : 'login.php?pesan=login_dulu'; ?>" class="fas fa-shopping-cart"></a>
-      
+
       <?php if($loggedIn): ?>
         <div class="user-welcome">
-          <i class="fas fa-user"></i>
-          <span>
-          <?php 
-            include("connect.php");
-            $email = $_SESSION['email'];
-            $query = mysqli_query($koneksi, "SELECT nama FROM users WHERE email='$email'");
-            $user = mysqli_fetch_assoc($query);
-            echo $user['nama'];
-          ?>
-          <span>
+          <a href="profil.php?id=<?php echo $user['id_user'] ?>" class="fas fa-user"></a>
+          <span><?php echo htmlspecialchars($user['nama']);?><span>
         </div>
         <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
       <?php else: ?>
