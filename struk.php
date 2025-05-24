@@ -33,7 +33,8 @@ $detail = mysqli_query($koneksi,
 <head>
     <meta charset="UTF-8">
     <title>Struk Pembelian</title>
-    <style>
+    <link rel="stylesheet" href="CSS/struk.css">
+    <!-- <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         .receipt { max-width: 600px; margin: 0 auto; border: 1px solid #ddd; padding: 20px; }
         h1 { text-align: center; color: #333; }
@@ -42,7 +43,7 @@ $detail = mysqli_query($koneksi,
         th { background-color: #f2f2f2; }
         .total { font-weight: bold; text-align: right; }
         .btn { display: inline-block; padding: 10px 15px; background: #4CAF50; color: white; text-decoration: none; }
-    </style>
+    </style> -->
 </head>
 <body>
     <div class="receipt">

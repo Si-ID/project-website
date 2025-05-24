@@ -201,6 +201,18 @@ body.showCart .container{
     width: 0;
 }
 
+.btn { /* Ganti dengan nama class container yang sebenarnya */
+  display: flex;
+  align-items: center; /* Membuat item di dalamnya sejajar vertikal di tengah */
+  justify-content: flex-end; /* Jika tombol "Check Out" seharusnya di kanan */
+  /* Atau justify-content: space-between; jika ingin ada jarak maksimal di antara tombol */
+}
+
+.btn button { /* Gaya umum untuk kedua tombol */
+  /* Tambahkan margin atau padding sesuai kebutuhan untuk spasi */
+  margin-left: 10px; /* Contoh memberikan jarak di kiri tombol "Check Out" */
+}
+
 @media only screen and (max-width: 992px) {
     .listProduct{
         grid-template-columns: repeat(3, 1fr);

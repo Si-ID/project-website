@@ -1,0 +1,80 @@
+body {
+  background-color: #f4f1ea;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  margin: 0;
+}
+
+.receipt {
+  background: #fffefb;
+  border: 1px dashed #aaa;
+  width: 380px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(80, 80, 80, 0.1);
+  color: #3c3c2e;
+  border-radius: 10px;
+}
+
+.receipt h1 {
+  text-align: center;
+  color: #5c4a2f;
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
+
+.receipt p {
+  font-size: 0.95em;
+  margin: 6px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+th, td {
+  padding: 6px 8px;
+  border-bottom: 1px dashed #ccc;
+  text-align: left;
+}
+
+th {
+  background-color:  rgba(255, 51 , 153, .05);
+  color: #423f32;
+}
+
+.total {
+  text-align: right;
+  font-weight: bold;
+  color: #2e2e1f;
+}
+
+.btn {
+  background-color: brown;
+  color: white;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  margin: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #5e472c;
+}
+
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+  .btn {
+    display: none;
+  }
+}

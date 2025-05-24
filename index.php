@@ -68,8 +68,8 @@ if($loggedIn) {
 
     <div class="content">
       <h3>why choose us?</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto fugiat repudiandae blanditiis, vero nulla veniam aliquid maiores saepe, ut deserunt pariatur sapiente magni optio! Consectetur eligendi asperiores delectus blanditiis optio?</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae accusantium delectus nostrum laboriosam beatae! Ab dolor autem a itaque ex, alias architecto placeat excepturi dolorem sapiente. Nam maxime aspernatur nesciunt.</p>
+      <p>Thrifture bukan hanya sekadar toko thrifting online. Kami adalah tempat di mana pakaian mendapatkan kehidupan kedua, cerita lama menemukan pemilik baru, dan setiap pembelian adalah langkah kecil menuju masa depan yang lebih berkelanjutan. Kami dengan cermat memilih setiap item yang kami tawarkan, memastikan kualitas dan keunikannya sehingga Anda dapat menemukan harta karun fesyen yang benar-benar istimewa.</p>
+      <p>Bergabunglah dengan gerakan thrifting bersama Thrifture. Jelajahi pilihan kami yang terus bertambah, temukan gaya unik Anda, dan mari bersama-sama kita memberikan dampak positif bagi planet ini, satu pakaian pre-loved pada satu waktu.</p>
       <a href="#" class="btn">learn more</a>
     </div>
     </div>
