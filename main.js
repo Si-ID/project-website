@@ -59,9 +59,6 @@ function updateCart() {
     cart.forEach(item => {
         html += `
         <div class="item" data-id="${item.id}">
-            <div class="image">
-                <img src="assets/placeholder.jpg" alt="${item.name}">
-            </div>
             <div class="name">${item.name}</div>
             <div class="totalPrice">Rp${(item.price * item.quantity).toLocaleString('id-ID')}</div>
             <div class="quantity">

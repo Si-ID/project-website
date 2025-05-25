@@ -126,7 +126,7 @@ header{
 }
 
 /* cart */
-.cartTab{
+/* .cartTab{
     width: 400px;
     background-color: white;
     color: black;
@@ -199,30 +199,113 @@ body.showCart .container{
 }
 .listCart::-webkit-scrollbar{
     width: 0;
+} */
+
+.cartTab {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 350px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 999;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
 }
 
-.btn { /* Ganti dengan nama class container yang sebenarnya */
-  display: flex;
-  align-items: center; /* Membuat item di dalamnya sejajar vertikal di tengah */
-  justify-content: flex-end; /* Jika tombol "Check Out" seharusnya di kanan */
-  /* Atau justify-content: space-between; jika ingin ada jarak maksimal di antara tombol */
+/* Saat aktif (showCart ditambahkan ke body), tampilkan cart */
+body.showCart .cartTab {
+    right: 0;
 }
 
-.btn button { /* Gaya umum untuk kedua tombol */
-  /* Tambahkan margin atau padding sesuai kebutuhan untuk spasi */
-  margin-left: 10px; /* Contoh memberikan jarak di kiri tombol "Check Out" */
+.cartTab h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
 }
 
-@media only screen and (max-width: 992px) {
-    .listProduct{
-        grid-template-columns: repeat(3, 1fr);
-    }
+.listCart {
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    gap: 10px;
+}
 
-/* mobile */
-@media only screen and (max-width: 768px) {
-    .listProduct{
-        grid-template-columns: repeat(2, 1fr);
-    }
+.item .image img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.item .name {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.item .totalPrice {
+    font-weight: bold;
+    color: #e53935;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity span {
+    width: 25px;
+    height: 25px;
+    background: #f1f1f1;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.close {
+    flex: 1;
+    background: #eee;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.checkOut {
+    flex: 1;
+    background: #b02a37;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
 }
