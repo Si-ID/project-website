@@ -306,7 +306,7 @@ header .fa-bars{
   color: #999;
   padding: 2rem 0;
   padding-top: 0.5rem;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 
@@ -405,7 +405,7 @@ header .fa-bars{
 
 .products .box-container .box .content{
   padding: 2rem;
-  text-align: center;;
+  text-align: center;
 }
 
 .products .box-container .box .content h3{
