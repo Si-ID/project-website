@@ -12,39 +12,6 @@ body{
     transition: transform .5s;
 }
 
-
-.navbar {
-    display: flex;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: rgba(255, 51 , 153, .05);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    margin-right: 1rem;
-}
-    
-.navbar .brand {
-    flex-grow: 1;
-    font-size: 1.2rem;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 20px;
-    color: brown;
-}
-        
-.user-info i {
-    margin-right: 5px;
-}
-
 svg{
     width: 30px;
 }
@@ -54,29 +21,6 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-}
-
-/* Header awal */
-.header-container {
-  transition: margin-right 0.3s ease;
-}
-
-/* Saat cart muncul, geser isi ke kiri */
-.header-container.shifted {
-  margin-right: 300px; /* sesuaikan dengan lebar cart-tab */
-}
-
-.brand{
-  text-align: center;
-  font-size: 4rem;
-  color:#333;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-}
-
-
-.brand span{
-  color: brown;
 }
 
 .icon-cart{

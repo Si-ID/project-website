@@ -34,18 +34,35 @@ $detail = mysqli_query($koneksi,
     <meta charset="UTF-8">
     <title>Struk Pembelian</title>
     <link rel="stylesheet" href="CSS/struk.css">
-    <!-- <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .receipt { max-width: 600px; margin: 0 auto; border: 1px solid #ddd; padding: 20px; }
-        h1 { text-align: center; color: #333; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .total { font-weight: bold; text-align: right; }
-        .btn { display: inline-block; padding: 10px 15px; background: #4CAF50; color: white; text-decoration: none; }
-    </style> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #f8f9fa; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
+      <!-- Logo -->
+    <div style="font-weight: bold; font-size: 28px; color: #333;">Thrifture<span style="color: brown;">.</span>
+    </div>
+
+     <!-- Tombol Kembali Modern -->
+    <a href="index.php" style="
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background-color: white;
+      border: 2px solid #c0392b;
+      color: brown;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    "
+    onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+    onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+    <i class="fas fa-arrow-right"></i> Kembali </a>
+    </header>
+
     <div class="receipt">
         <h1>Struk Pembelian</h1>
         <p><strong>No. Transaksi:</strong> <?= $transaksi['id_transaksi'] ?></p>

@@ -21,19 +21,35 @@ $products = mysqli_query($koneksi, "SELECT * FROM baju WHERE stok > 0");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - Thrifture</title>
     <link rel="stylesheet" href="CSS/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body class="">
 
-<nav class="navbar">
-    <a href="index.php">&larr; Home</a>
-    <div class="brand">thrifture<span>.</span></div>
-    <div class="user-info">
-        <i class="fas fa-user"></i> <?php echo $user['nama']; ?>
-        <?php if($user['role'] == 'admin'): ?>
-            <a href="admin.php" class="admin-link">Admin Panel</a>
-        <?php endif; ?>
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #f8f9fa; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
+      <!-- Logo -->
+    <div style="font-weight: bold; font-size: 28px; color: #333;">Thrifture<span style="color: brown;">.</span>
     </div>
-</nav>
+
+     <!-- Tombol Kembali Modern -->
+    <a href="index.php" style="
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background-color: white;
+      border: 2px solid #c0392b;
+      color: brown;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    "
+    onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+    onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+    <i class="fas fa-arrow-right"></i> Kembali </a>
+    </header>
+
     
 <div class="container">
     <header>

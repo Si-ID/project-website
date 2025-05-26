@@ -1,54 +1,4 @@
-/* learn-more.css
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #fff;
-  color: #333;
-}
-
-.hero {
-  height: 70vh;
-  background: linear-gradient(rgba(139, 0, 0, 0.6), rgba(139, 0, 0, 0.6)),
-              url('https://images.unsplash.com/photo-1555529669-e69c7c00b45a') center/cover no-repeat;
-  color: white;
-  padding: 40px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-}
-
-.hero .btn {
-  transition: 0.3s;
-}
-
-.hero .btn:hover {
-  transform: scale(1.05);
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul li::before {
-  content: "✔ ";
-  color: #8b0000;
-  font-weight: bold;
-  margin-right: 8px;
-}
-
-.testimonial {
-  background-color: #fef2f2;
-  border-left: 5px solid #8b0000;
-  font-style: italic;
-}
-
-footer {
-  font-size: 14px;
-} */
-
-/* General Reset and Font */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
@@ -58,7 +8,6 @@ body {
   padding: 0;
 }
 
-/* Hero Section */
 .hero {
   height: 80vh;
   background: url('https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb') center/cover no-repeat;

@@ -9,12 +9,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <nav class="navbar navbar-light bg-light shadow-sm px-4">
-    <a class="navbar-brand fw-bold text-danger fs-3" href="#">Thrifture<span style="color: #c0392b;">.</span>
-    <a href="index.php" class="btn btn-outline-danger">Kembali</a>
-  </nav>
+
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #f8f9fa; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
+      <!-- Logo -->
+    <div style="font-weight: bold; font-size: 28px; color: #333;">Thrifture<span style="color: brown;">.</span>
+    </div>
+
+     <!-- Tombol Kembali Modern -->
+    <a href="index.php" style="
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background-color: white;
+      border: 2px solid #c0392b;
+      color: brown;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    "
+    onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+    onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+    <i class="fas fa-arrow-right"></i> Kembali </a>
+    </header>
+
 
   <header class="hero d-flex flex-column justify-content-center align-items-center text-center text-white">
     <h1 class="display-4 fw-bold">Apa itu Thrifture?</h1>
