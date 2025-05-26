@@ -1,9 +1,10 @@
 <?php
 session_start();
+include("connect.php");
 $loggedIn = isset($_SESSION['email']);
 
 if($loggedIn) {
-    include("connect.php");
+
     $email = $_SESSION['email'];
     $query = mysqli_query($koneksi, "SELECT id_user, nama,role FROM users WHERE email='$email'");
     $user = mysqli_fetch_assoc($query);
