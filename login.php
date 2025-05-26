@@ -40,7 +40,7 @@
       color: blue;
     }
     a:hover {
-      color: white; /* saat mouse diarahkan */
+      color: white; 
     }
   </style>
   </head>

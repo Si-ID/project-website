@@ -169,7 +169,7 @@ $products[] = $row;
     <div class="founder-grid">
       <!-- Founder 1 -->
       <div class="founder-card">
-        <img src="assets/founder1.jpg" alt="Founder 1" class="founder-photo" />
+        <img src="assets/valdo.jpg" alt="Founder 1" class="founder-photo" />
         <div class="founder-info">
           <h3>Novaldo Putra Nugraha</h3>
           <p>Co-Founder & CEO</p>
@@ -182,7 +182,7 @@ $products[] = $row;
 
       <!-- Founder 2 -->
       <div class="founder-card">
-        <img src="assets/founder2.jpg" alt="Founder 2" class="founder-photo" />
+        <img src="assets/tata.jpg" alt="Founder 2" class="founder-photo" />
         <div class="founder-info">
           <h3>Naftali Margareta Gultom</h3>
           <p>Co-Founder & CTO</p>
