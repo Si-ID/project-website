@@ -120,7 +120,6 @@ $products = mysqli_query($koneksi, "SELECT * FROM baju ORDER BY id_baju");
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>ID</th>
                         <th>Gambar</th>
                         <th>Nama Baju</th>
                         <th>Harga</th>
@@ -135,7 +134,6 @@ $products = mysqli_query($koneksi, "SELECT * FROM baju ORDER BY id_baju");
                     ?>
                     <tr>
                         <td><?php echo $counter++; ?></td>
-                        <td><?php echo $product['id_baju']; ?></td>
                         <td>
                             <img src="<?php echo $product['gambar']; ?>" alt="<?php echo htmlspecialchars($product['nama_baju']); ?>">
                             <input type="file" name="products_gambar[<?php echo $product['id_baju']; ?>]">
