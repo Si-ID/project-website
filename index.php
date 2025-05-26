@@ -8,6 +8,10 @@ if($loggedIn) {
     $query = mysqli_query($koneksi, "SELECT id_user, nama FROM users WHERE email='$email'");
     $user = mysqli_fetch_assoc($query);
 }
+
+  // $queryy = "SELECT * FROM users WHERE id_user = '$user[id_user]'";
+  // $sql = mysqli_query($koneksi, $queryy);
+  // $resultt = mysqli_fetch_assoc($sql);
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +43,7 @@ if($loggedIn) {
 
       <?php if($loggedIn): ?>
         <div class="user-welcome">
-          <a href="profil.php?id=<?php echo $user['id_user'] ?>" class="fas fa-user"></a>
+          <a href="user.php?id_user=<?php echo $user['id_user'] ?>" class="fas fa-user"></a>
           <span><?php echo htmlspecialchars($user['nama']);?><span>
         </div>
         <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
@@ -68,10 +72,13 @@ if($loggedIn) {
 
     <div class="content">
       <h3>why choose us?</h3>
-      <p>Thrifture bukan hanya sekadar toko thrifting online. Kami adalah tempat di mana pakaian mendapatkan kehidupan kedua, cerita lama menemukan pemilik baru, dan setiap pembelian adalah langkah kecil menuju masa depan yang lebih berkelanjutan. Kami dengan cermat memilih setiap item yang kami tawarkan, memastikan kualitas dan keunikannya sehingga Anda dapat menemukan harta karun fesyen yang benar-benar istimewa.</p>
-      <p>Bergabunglah dengan gerakan thrifting bersama Thrifture. Jelajahi pilihan kami yang terus bertambah, temukan gaya unik Anda, dan mari bersama-sama kita memberikan dampak positif bagi planet ini, satu pakaian pre-loved pada satu waktu.</p>
-      <a href="#" class="btn">learn more</a>
-    </div>
+        <p class="text-muted">
+          Thrifture bukan hanya sekadar toko thrifting online. Kami adalah tempat di mana pakaian mendapatkan kehidupan kedua, cerita lama menemukan pemilik baru, dan setiap pembelian adalah langkah kecil menuju masa depan yang lebih berkelanjutan. Kami dengan cermat memilih setiap item yang kami tawarkan, memastikan kualitas dan keunikannya sehingga Anda dapat menemukan harta karun fesyen yang benar-benar istimewa.
+        </p>
+        <p class="text-muted">
+          Bergabunglah dengan gerakan thrifting bersama Thrifture. Jelajahi pilihan kami yang terus bertambah, temukan gaya unik Anda, dan mari bersama-sama kita memberikan dampak positif bagi planet ini, satu pakaian pre-loved pada satu waktu.
+        </p>
+        <a href="learnmore.php" class="btn btn-dark align-self-start px-4 py-2 mt-2">Learn More</a>
     </div>
   </section>
 

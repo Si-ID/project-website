@@ -41,6 +41,8 @@
 
         if ($update_query) {
             $msg = "Profil Berhasil di Update!";
+            header("Location: index.php");
+            exit();
             //refresh data user
             $query = mysqli_query($koneksi,"SELECT*FROM users WHERE email = '$email'");
             $user = mysqli_fetch_assoc($query);
@@ -60,16 +62,30 @@
     <title>Profile</title>
     <link rel="stylesheet" href="CSS/form.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <a href="index.php" class="home-link">&larr; Home</a>
         <div class="brand">thrifture<span>.</span></div>
-    </nav>
+    </nav> -->
     <!-- NAVBAR SELESAI -->
     
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #f8f9fa; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
+  <!-- Logo -->
+  <div style="font-weight: bold; font-size: 28px; color: #c0392b;">
+    Thrifture<span style="color: #c0392b;">.</span>
+  </div>
+
+  <!-- Tombol Kembali -->
+  <a href="index.php" style="padding: 8px 16px; border: 2px solid #c0392b; color: #c0392b; border-radius: 6px; text-decoration: none; font-weight: 500;">
+    Kembali
+  </a>
+</header>
+
+
     <div class="form">
         <form action="" method="post">
             <h2 class="form-title">Edit Profile</h2>

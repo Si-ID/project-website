@@ -34,13 +34,25 @@ $product_images = [
 </head>
 <body class="">
 
-<nav class="navbar">
+<!-- <nav class="navbar">
     <a href="index.php">&larr; Home</a>
     <div class="brand">thrifture<span>.</span></div>
     <div class="user-info">
         <i class="fas fa-user"></i> <?php echo $user['nama']; ?>
     </div>
-</nav>
+</nav> -->
+
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #f8f9fa; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
+  <!-- Logo -->
+  <div style="font-weight: bold; font-size: 28px; color: #c0392b;">
+    Thrifture<span style="color: #c0392b;">.</span>
+  </div>
+
+  <!-- Tombol Kembali -->
+  <a href="index.php" style="padding: 8px 16px; border: 2px solid #c0392b; color: #c0392b; border-radius: 6px; text-decoration: none; font-weight: 500;">
+    Kembali
+  </a>
+</header>
     
 <div class="container">
     <header>

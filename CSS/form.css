@@ -1,100 +1,12 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fdf4e3;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar {
-      display: flex;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: rgba(255, 51 , 153, .05);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .navbar a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      margin-right: 1rem;
-    }
-    .navbar .brand {
-      flex-grow: 1;
-      font-size: 1.2rem;
-    }
-
-.brand{
-  text-align: center;
-  font-size: 4rem;
-  color:#333;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-}
-
-
-.brand span{
-  color: brown;
-}
-
-
-.msg {
-    color: red;
-    font-size: 18px ;
-}
-
-.form {
-    display: flex;
-    align-items:center ;
-    justify-content:center ;
-    min-height: 100vh;
-    
-}
-
-
-
-.form form {
-    background-color: grey;
-    box-shadow: rgb(129, 129, 129);
-    border-radius: 10px;
-    padding : 2rem;
-    width: 28rem;
-}
-
-a :hover {
-    color: blue;
-}
- */
-
- /* Reset dan dasar */
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-  background-color: #f2f2f2;
-  position: relative;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-
 /* Navbar sederhana */
+body{
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -109,19 +21,29 @@ body {
     font-weight: bold;
     margin-right: 1rem;
 }
-
+    
 .navbar .brand {
     flex-grow: 1;
     font-size: 1.2rem;
 }
-    
-.home-link {
-    padding-left: 20px; 
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+    color: brown;
+}
+        
+.user-info i {
+    margin-right: 5px;
 }
 
-
-svg{
-    width: 30px;
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
 }
 
 .brand{
@@ -132,11 +54,15 @@ svg{
   font-weight: bold;
 }
 
-
 .brand span{
   color: brown;
 }
 
+
+
+svg{
+    width: 30px;
+}
 
 .form {
   display: flex;
@@ -160,34 +86,49 @@ form {
 
 
 form h2 {
-  background-color: brown;
+  /* background-color: brown;
   color: white;
   border-radius: 20px 20px 0 0;
   padding: 12px;
   margin: -40px -30px 30px -30px;
-  font-size: 1.3rem;
+  font-size: 1.3rem; */
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: #912121;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
 }
 
 .form-group input,
 .form-group select {
-  width: 100%;
+  /* width: 100%;
   padding: 12px 15px;
   border-radius: 30px;
   border: 1px solid #ccc;
   font-size: 0.95rem;
   outline: none;
-  transition: 0.3s;
+  transition: 0.3s; */
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background-color: #fff;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 0 1px #ddd;
+  transition: all 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-  border-color: #0a0f2c;
-  box-shadow: 0 0 0 2px rgba(10, 15, 44, 0.1);
+  /* border-color: #0a0f2c;
+  box-shadow: 0 0 0 2px rgba(10, 15, 44, 0.1); */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(176, 42, 42, 0.2);
+  border-color: #b02a2a;
 }
 
 
@@ -240,4 +181,164 @@ form p a:hover {
   color: red;
   margin-bottom: 10px;
   text-align: center;
+} */
+
+.alert {
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  background-color: rgba(255, 100, 100, 0.1);
+  border: 1px solid #ffb3b3;
+  color: #912121;
+}
+
+/* Reset dasar */
+/* 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #fff0f0, #ffe6e6);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../assets/nav.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 51 , 153, .05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.navbar .brand {
+    flex-grow: 1;
+    font-size: 1.2rem;
+}
+
+.brand{
+  text-align: center;
+  font-size: 4rem;
+  color:#333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+
+.brand span{
+  color: brown;
+}
+
+
+.container, .form {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  max-width: 420px;
+  width: 100%;
+  margin-top: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+form h2 {
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: #912121;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-control, .form-select {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background-color: #fff;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 0 1px #ddd;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(176, 42, 42, 0.2);
+  border-color: #b02a2a;
+}
+
+.btn {
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-dark {
+  background-color: #b02a2a;
+  color: #fff;
+  border: none;
+}
+
+.btn-dark:hover {
+  background-color: #912121;
+}
+
+
+p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+p a {
+  color: #b02a2a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+.alert {
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  background-color: rgba(255, 100, 100, 0.1);
+  border: 1px solid #ffb3b3;
+  color: #912121;
+}
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
