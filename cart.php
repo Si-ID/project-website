@@ -7,21 +7,11 @@ if (!isset($_SESSION['email'])) {
 
 include("connect.php");
 $email = $_SESSION['email'];
-$query = mysqli_query($koneksi, "SELECT nama FROM users WHERE email='$email'");
+$query = mysqli_query($koneksi, "SELECT nama, role FROM users WHERE email='$email'");
 $user = mysqli_fetch_assoc($query);
 
 // Get products from database
 $products = mysqli_query($koneksi, "SELECT * FROM baju WHERE stok > 0");
-
-// Image mapping
-$product_images = [
-    1 => 'assets/baju1.png',
-    2 => 'assets/baju2.png',
-    3 => 'assets/baju3.png',
-    4 => 'assets/baju4.png',
-    5 => 'assets/baju5.png',
-    6 => 'assets/baju6.png'
-];
 ?>
 
 <!DOCTYPE html>
@@ -34,25 +24,16 @@ $product_images = [
 </head>
 <body class="">
 
-<!-- <nav class="navbar">
+<nav class="navbar">
     <a href="index.php">&larr; Home</a>
     <div class="brand">thrifture<span>.</span></div>
     <div class="user-info">
         <i class="fas fa-user"></i> <?php echo $user['nama']; ?>
+        <?php if($user['role'] == 'admin'): ?>
+            <a href="admin.php" class="admin-link">Admin Panel</a>
+        <?php endif; ?>
     </div>
-</nav> -->
-
-<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #f8f9fa; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
-  <!-- Logo -->
-  <div style="font-weight: bold; font-size: 28px; color: #c0392b;">
-    Thrifture<span style="color: #c0392b;">.</span>
-  </div>
-
-  <!-- Tombol Kembali -->
-  <a href="index.php" style="padding: 8px 16px; border: 2px solid #c0392b; color: #c0392b; border-radius: 6px; text-decoration: none; font-weight: 500;">
-    Kembali
-  </a>
-</header>
+</nav>
     
 <div class="container">
     <header>
@@ -68,7 +49,7 @@ $product_images = [
     <div class="listProduct">
         <?php while($product = mysqli_fetch_assoc($products)): ?>
         <div class="item" data-id="<?php echo $product['id_baju']; ?>">
-            <img src="<?php echo $product_images[$product['id_baju']] ?? 'assets/placeholder.jpg'; ?>" 
+            <img src="<?php echo $product['gambar']; ?>" 
                  alt="<?php echo htmlspecialchars($product['nama_baju']); ?>">
             <h2><?php echo htmlspecialchars($product['nama_baju']); ?></h2>
             <div class="price">Rp<?php echo number_format($product['harga'], 0, ',', '.'); ?></div>
@@ -77,7 +58,7 @@ $product_images = [
                     data-name="<?php echo htmlspecialchars($product['nama_baju']); ?>"
                     data-price="<?php echo $product['harga']; ?>"
                     data-stock="<?php echo $product['stok']; ?>"
-                    data-image="<?php echo $product_images[$product['id_baju']] ?? 'assets/placeholder.jpg'; ?>">
+                    data-image="<?php echo $product['gambar']; ?>">
                 Add To Cart
             </button>
         </div>
@@ -100,7 +81,6 @@ $product_images = [
 </div>
 
 <script>
-// Fungsi untuk update form sebelum submit
 document.querySelector('form').addEventListener('submit', function(e) {
     document.getElementById('cartDataInput').value = JSON.stringify(cart);
 });

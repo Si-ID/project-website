@@ -1,16 +1,15 @@
 <?php
 session_start();
 include 'connect.php';
-echo "koneksi berhasil";
 
 if (!isset($_SESSION['email'])) {
     header("Location: login.php?pesan=login_dulu");
     exit;
 }
 
-// Ambil data user
+// Cek role user (tambahkan pengecekan admin)
 $email = $_SESSION['email'];
-$user = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT id_user FROM users WHERE email='$email'"));
+$user = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT id_user, role FROM users WHERE email='$email'"));
 
 if (!$user) {
     die("User tidak ditemukan");
@@ -33,13 +32,12 @@ if (json_last_error() !== JSON_ERROR_NONE || !is_array($cart)) {
 mysqli_begin_transaction($koneksi);
 
 try {
-    // Hitung total harga
     $total_harga = 0;
     foreach ($cart as $item) {
         $total_harga += $item['price'] * $item['quantity'];
     }
 
-    // 1. CREATE - Simpan transaksi utama
+    // Simpan transaksi utama
     $insertTransaksi = mysqli_query($koneksi, 
         "INSERT INTO transaksi (id_user, total_harga) 
          VALUES ('".$user['id_user']."', '$total_harga')");
@@ -50,7 +48,7 @@ try {
 
     $id_transaksi = mysqli_insert_id($koneksi);
 
-    // 2. CREATE - Simpan detail transaksi dan UPDATE stok
+    // Simpan detail transaksi dan UPDATE stok
     foreach ($cart as $item) {
         $id_baju = (int)$item['id'];
         $jumlah = (int)$item['quantity'];
@@ -76,18 +74,12 @@ try {
         }
     }
 
-    // Commit transaksi jika semua berhasil
     mysqli_commit($koneksi);
-    
-    // Simpan ID transaksi ke session untuk struk
     $_SESSION['last_transaksi'] = $id_transaksi;
-    
-    // Redirect ke halaman struk
     header("Location: struk.php");
     exit;
 
 } catch (Exception $e) {
-    // Rollback jika ada error
     mysqli_rollback($koneksi);
     header("Location: cart.php?error=checkout_failed");
     exit;

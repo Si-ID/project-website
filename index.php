@@ -5,8 +5,15 @@ $loggedIn = isset($_SESSION['email']);
 if($loggedIn) {
     include("connect.php");
     $email = $_SESSION['email'];
-    $query = mysqli_query($koneksi, "SELECT id_user, nama FROM users WHERE email='$email'");
+    $query = mysqli_query($koneksi, "SELECT id_user, nama,role FROM users WHERE email='$email'");
     $user = mysqli_fetch_assoc($query);
+    $isAdmin = ($user['role'] == 'admin');
+}
+// Query Untuk mengambil dari db
+$productsQuery = mysqli_query($koneksi, "SELECT * FROM baju ORDER BY id_baju DESC");
+$products = [];
+while($row = mysqli_fetch_assoc($productsQuery)) {
+$products[] = $row;
 }
 
   // $queryy = "SELECT * FROM users WHERE id_user = '$user[id_user]'";
@@ -39,18 +46,26 @@ if($loggedIn) {
     </nav>
 
     <div class="icons">
-      <a href="<?php echo $loggedIn ? 'cart.php' : 'login.php?pesan=login_dulu'; ?>" class="fas fa-shopping-cart"></a>
-
-      <?php if($loggedIn): ?>
+    <?php if($loggedIn): ?>
+        <?php if($isAdmin): ?>
+            <!-- Tampilan untuk Admin -->
+            <a href="admin.php" class="fas fa-user-cog"></a>
+        <?php else: ?>
+            <!-- Tampilan untuk User Biasa -->
+            <a href="cart.php" class="fas fa-shopping-cart"></a>
+        <?php endif; ?>
+        
         <div class="user-welcome">
-          <a href="user.php?id_user=<?php echo $user['id_user'] ?>" class="fas fa-user"></a>
-          <span><?php echo htmlspecialchars($user['nama']);?><span>
+            <a href="user.php?id_user=<?php echo $user['id_user'] ?>" class="fas fa-user"></a>
+            <span><?php echo htmlspecialchars($user['nama']); ?></span>
         </div>
         <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
-      <?php else: ?>
+    <?php else: ?>
+        <!-- Tampilan untuk Guest -->
+        <a href="login.php?pesan=login_dulu" class="fas fa-shopping-cart"></a>
         <a href="register.php" class="fas fa-user"></a>
-      <?php endif; ?>
-    </div>
+    <?php endif; ?>
+</div>
   </header>
 
   <section class="home" id="home" style="background: url('assets/bg.png') no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center;">>
@@ -126,67 +141,22 @@ if($loggedIn) {
     <?php endif; ?>
     
     <div class="box-container">
-
-      <div class="box">
-        <div class="image">
-          <img src="assets/baju1.png" alt="">
+      <?php foreach($products as $product): ?>
+        <div class="box">
+          <div class="image">
+            <img src="<?php echo htmlspecialchars($product['gambar']); ?>" alt="<?php echo htmlspecialchars($product['nama_baju']); ?>">
+          </div>
+          <div class="content">
+            <h3><?php echo htmlspecialchars($product['nama_baju']); ?></h3>
+            <div class="price">Rp. <?php echo number_format($product['harga'], 0, ',', '.'); ?></div>
+            <?php if($loggedIn): ?>
+              <a href="add_to_cart.php?id_product=<?php echo $product['id_baju']; ?>" class="btn">Add to Cart</a>
+            <?php else: ?>
+              <a href="login.php?pesan=login_dulu" class="btn">Add to Cart</a>
+            <?php endif; ?>
+          </div>
         </div>
-        <div class="content">
-          <h3>blue blouse</h3>
-          <div class="price">Rp. 50k</div>
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="image">
-          <img src="assets/baju2.png" alt="">
-        </div>
-        <div class="content">
-          <h3>brown blouse</h3>
-          <div class="price">Rp. 45k</div>
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="image">
-          <img src="assets/baju3.png" alt="">
-        </div>
-        <div class="content">
-          <h3>blue coquette blouse</h3>
-          <div class="price">Rp. 35k</div>
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="image">
-          <img src="assets/baju4.png" alt="">
-        </div>
-        <div class="content">
-          <h3>green blouse</h3>
-          <div class="price">Rp. 50k</div>
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="image">
-          <img src="assets/baju5.png" alt="">
-        </div>
-        <div class="content">
-          <h3>pinky shirt blouse</h3>
-          <div class="price">Rp. 50k</div>
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="image">
-          <img src="assets/baju6.png" alt="">
-        </div>
-        <div class="content">
-          <h3>white dress</h3>
-          <div class="price">Rp. 25k</div>
-        </div>
-      </div>
-    </div>
+      <?php endforeach; ?>
 
     <section class="contact" id="contact">
       <h1 class="heading"><span> contact </span> us </h1>

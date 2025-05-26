@@ -14,6 +14,7 @@
         $_SESSION['email'] = $user['email'];
         $_SESSION['password'] = $user['password'];
         $_SESSION['username'] = $user['username'];
+        $_SESSION['role']     = $user['role'];
         header('Location:index.php');
       }else if(mysqli_fetch_array($query_delete) ) {
         echo "<script>alert('Akun Anda sudah di suspend! Jika ingin memulihkan akun silahkan menghubungi admin!')</script>";
