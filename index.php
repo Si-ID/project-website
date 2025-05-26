@@ -141,7 +141,7 @@ $products[] = $row;
     </div>
     <?php endif; ?>
     
-    <div class="box-container">
+ <div class="box-container">
       <?php foreach($products as $product): ?>
         <div class="box">
           <div class="image">
@@ -150,14 +150,17 @@ $products[] = $row;
           <div class="content">
             <h3><?php echo htmlspecialchars($product['nama_baju']); ?></h3>
             <div class="price">Rp. <?php echo number_format($product['harga'], 0, ',', '.'); ?></div>
-            <?php if($loggedIn): ?>
+            <?php if($loggedIn && !$isAdmin): ?>
+              <!-- Hanya tampilkan Add to Cart untuk user biasa -->
               <a href="add_to_cart.php?id_product=<?php echo $product['id_baju']; ?>" class="btn">Add to Cart</a>
-            <?php else: ?>
+            <?php elseif(!$loggedIn): ?>
+              <!-- Tampilkan untuk guest -->
               <a href="login.php?pesan=login_dulu" class="btn">Add to Cart</a>
             <?php endif; ?>
           </div>
         </div>
       <?php endforeach; ?>
+    </div>
 
     <section class="contact" id="contact">
       <h1 class="heading"><span> contact </span> us </h1>
