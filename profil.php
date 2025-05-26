@@ -64,33 +64,34 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
 
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #f8f9fa; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
-    <!-- Logo -->
-    <div style="font-weight: bold; font-size: 28px; color: #333;">Thrifture<span style="color: brown;">.</span></div>
-        
-    <!-- Tombol Kembali Modern -->
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #fff9f3; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
+      <!-- Logo -->
+    <div style="font-weight: bold; font-size: 28px; color: #333;">Thrifture<span style="color: brown;">.</span>
+    </div>
+
+     <!-- Tombol Kembali Modern -->
     <a href="index.php" style="
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 16px;
-        background-color: white;
-        border: 2px solid #c0392b;
-        color: brown;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background-color: #fff9f3;
+      border: 2px solid #5c4033;
+      color: brown;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     "
-        onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
-        onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
-        <i class="fas fa-arrow-right"></i> Kembali
-        </a>
-        </header>
+    onmouseover="this.style.backgroundColor='#5c4033'; this.style.color='#fff9f3';"
+    onmouseout="this.style.backgroundColor='#fff9f3'; this.style.color='#5c4033';">
+    <i class="fas fa-arrow-right"></i> Kembali </a>
+    </header>
 
 
     <div class="form">
@@ -133,5 +134,7 @@
             </div>
         </form>
     </div>
+
+     <img class="bg-img" src="assets/nav.jpeg" alt="bg_image">
 </body>
 </html>

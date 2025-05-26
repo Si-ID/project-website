@@ -22,10 +22,11 @@ $products = mysqli_query($koneksi, "SELECT * FROM baju WHERE stok > 0");
     <title>Shopping Cart - Thrifture</title>
     <link rel="stylesheet" href="CSS/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body class="">
 
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #f8f9fa; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #fff9f3; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
       <!-- Logo -->
     <div style="font-weight: bold; font-size: 28px; color: #333;">Thrifture<span style="color: brown;">.</span>
     </div>
@@ -36,8 +37,8 @@ $products = mysqli_query($koneksi, "SELECT * FROM baju WHERE stok > 0");
       align-items: center;
       gap: 8px;
       padding: 10px 16px;
-      background-color: white;
-      border: 2px solid #c0392b;
+      background-color: #fff9f3;
+      border: 2px solid #5c4033;
       color: brown;
       border-radius: 8px;
       text-decoration: none;
@@ -45,8 +46,8 @@ $products = mysqli_query($koneksi, "SELECT * FROM baju WHERE stok > 0");
       transition: all 0.3s ease;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     "
-    onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
-    onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+    onmouseover="this.style.backgroundColor='#5c4033'; this.style.color='white';"
+    onmouseout="this.style.backgroundColor='white'; this.style.color='#5c4033';">
     <i class="fas fa-arrow-right"></i> Kembali </a>
     </header>
 

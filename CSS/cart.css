@@ -1,9 +1,9 @@
-body{
+body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container{
+.container {
     width: 900px;
     margin: auto;
     max-width: 90vw;
@@ -12,25 +12,25 @@ body{
     transition: transform .5s;
 }
 
-svg{
+svg {
     width: 30px;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
 }
 
-.icon-cart{
+.icon-cart {
     position: relative;
 }
-.icon-cart span{
+.icon-cart span {
     position: absolute;
     top: -8px;
     right: -10px;
-    background-color: red;
+    background-color: #5D4037; /* dark brown */
     color: white;
     width: 20px;
     height: 20px;
@@ -43,13 +43,13 @@ header{
     transition: transform 0.3s ease;
 }
 
-.title{
+.title {
     font-size: xx-large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: bold;
 }
 
-.listProduct .item img{
+.listProduct .item img {
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -57,31 +57,25 @@ header{
     display: block;
 }
 
-.listProduct{
+.listProduct {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-
 }
-.listProduct .item{
-    background-color: rgba(255, 51 , 153, .05);
+
+.listProduct .item {
+    background-color: #EFEBE9; /* light brownish */
     padding: 20px;
     border-radius: 20px;
 }
 
-.listProduct .item h2{
+.listProduct .item h2 {
     font-weight: 500;
     font-size: large;
-
 }
-/* .listProduct .item .price{
-    letter-spacing: 7px;
-    font-size: small;
 
-} */
-
-.listProduct .item button{
-    background-color: brown;
+.listProduct .item button {
+    background-color: #6D4C41; /* medium brown */
     color: #eee;
     border: none;
     padding: 5px 10px;
@@ -90,9 +84,9 @@ header{
 }
 
 /* cart */
-.cartTab{
+.cartTab {
     width: 400px;
-    background-color: white;
+    background-color: #D7CCC8; /* soft brown */
     color: black;
     position: fixed;
     top: 0;
@@ -101,14 +95,14 @@ header{
     display: grid;
     grid-template-rows: 70px 1fr 70px;
     transition: .5s;
-    border: 2px solid #eee;
+    border: 2px solid #BCAAA4; /* border brownish */
 }
 
-body.showCart .cartTab{
+body.showCart .cartTab {
     right: 0;
 }
 
-body.showCart .container{
+body.showCart .container {
     transform: translateX(-250px);
 }
 
@@ -116,9 +110,9 @@ body.showCart .container{
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #333;
+    color: #4E342E; /* dark brown text */
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #BCAAA4;
     padding-bottom: 10px;
 }
 
@@ -132,7 +126,7 @@ body.showCart .container{
 
 .close {
     flex: 1;
-    background: #eee;
+    background: #EFEBE9;
     border: none;
     padding: 12px;
     border-radius: 8px;
@@ -142,7 +136,7 @@ body.showCart .container{
 
 .checkOut {
     flex: 1;
-    background: #b02a37;
+    background: #795548; /* deep brown */
     color: white;
     border: none;
     padding: 12px;
@@ -151,13 +145,12 @@ body.showCart .container{
     font-weight: bold;
 }
 
-
 .listCart .item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #BCAAA4;
     font-size: 14px;
 }
 
@@ -178,25 +171,25 @@ body.showCart .container{
 .listCart .quantity span {
     width: 25px;
     height: 25px;
-    background: #f1f1f1;
+    background: #D7CCC8;
     border-radius: 50%;
     text-align: center;
     line-height: 25px;
     cursor: pointer;
     font-weight: bold;
-    color: #333;
+    color: #4E342E;
 }
 
 .listCart .quantity span:nth-child(2) {
     background-color: transparent;
-    color: #333;
+    color: #4E342E;
     cursor: default;
 }
 
 .listCart .totalPrice {
     flex: 1;
     font-weight: bold;
-    color: #e53935;
+    color: #8D6E63;
     text-align: right;
     white-space: nowrap;
 }
@@ -205,13 +198,12 @@ body.showCart .container{
     display: none;
 }
 
-.listCart .item:nth-child(even){
-    background-color: #eee1;
+.listCart .item:nth-child(even) {
+    background-color: #EFEBE9;
 }
-.listCart{
+.listCart {
     overflow: auto;
 }
-.listCart::-webkit-scrollbar{
+.listCart::-webkit-scrollbar {
     width: 0;
-} 
-    
+}

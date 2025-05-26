@@ -2,17 +2,12 @@
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #fefaf6;
+  color: #4E342E;
   margin: 0;
   padding: 0;
 }
 
-.hero {
-  height: 80vh;
-  background: url('https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb') center/cover no-repeat;
-  padding: 0 20px;
-}
 
 .hero h1,
 .hero p {
@@ -25,23 +20,48 @@ body {
 
 .hero .btn:hover {
   transform: translateY(-2px);
-  background-color: #f8d7da;
+  background-color: #e3cfc1;
 }
 
-/* Section Headings */
 section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #5D4037;
 }
+
+/* Target semua h2 dan p di dalam section.container */
+section.container h2 {
+  color:  #4E342E !important;
+}
+
+section.container p {
+  color: #5c4033 !important; /* Bisa diganti dengan 'brown' jika ingin lebih terang */
+}
+
+section.container li {
+  color: #5c4033 !important; /* Untuk <li> di daftar */
+}
+
+section.container a.btn {
+  background-color: #6D4C41 !important;
+  border-color: #6D4C41 !important;
+}
+
+section.container a.btn:hover {
+  background-color: #3e2723 !important; /* Lebih gelap saat hover */
+  border-color: #3e2723 !important;
+}
+
 
 .text-muted {
   font-size: 1rem;
+  color: #795548;
 }
 
-/* Testimonials */
+
 .testimonial {
   background-color: #fff;
-  border-left: 4px solid #dc3545;
+  border-left: 4px solid #8D6E63;
   transition: 0.3s;
 }
 
@@ -50,36 +70,35 @@ section h2 {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Buttons */
+
 .btn-danger {
-  background-color: #dc3545;
+  background-color: #6D4C41;
   border: none;
   transition: 0.3s ease-in-out;
 }
 
 .btn-danger:hover {
-  background-color: #bb2d3b;
+  background-color: #5D4037;
   transform: translateY(-2px);
 }
 
 .btn-outline-danger {
-  border: 2px solid #dc3545;
-  color: #dc3545;
+  border: 2px solid #6D4C41;
+  color: #6D4C41;
   transition: 0.3s;
 }
 
 .btn-outline-danger:hover {
-  background-color: #dc3545;
+  background-color: #6D4C41;
   color: #fff;
 }
 
-/* Image Styling */
+
 .img-fluid {
   border-radius: 16px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Gallery images */
 .row.text-center img {
   transition: 0.3s ease;
 }
@@ -89,13 +108,13 @@ section h2 {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
+
 footer {
   font-size: 0.9rem;
-  background-color: #f8f9fa;
+  background-color: #f5f3;
+  color: #4E342E
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .hero {
     height: auto;

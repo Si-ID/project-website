@@ -1,7 +1,6 @@
-
 body {
     font-family: 'Helvetica Neue', sans-serif;
-    background-color: #fdeff0;
+    background-color: #f8f1ee; /* cokelat krem muda */
     margin: 0;
     padding: 20px;
     color: #333;
@@ -21,7 +20,7 @@ body {
 /* Header */
 h1 {
     text-align: center;
-    color: #000;
+    color: #5D4037; /* cokelat tua */
     font-size: 28px;
     margin-bottom: 10px;
 }
@@ -46,19 +45,19 @@ th, td {
 }
 
 th {
-    background-color: #f9f9f9;
-    color: #555;
+    background-color: #efebe9; /* krem cokelat */
+    color: #5D4037;
     font-weight: bold;
 }
 
 td {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
 }
 
 .total {
     font-weight: bold;
     text-align: right;
-    color: #222;
+    color: #3e2723; /* lebih gelap untuk penekanan */
 }
 
 /* Footer Message */
@@ -66,6 +65,7 @@ td {
     margin-top: 40px;
     font-size: 18px;
     text-align: center;
+    color: #6d4c41; /* netral elegan */
 }
 
 /* Buttons */
@@ -73,7 +73,7 @@ td {
     display: inline-block;
     margin: 10px 10px 0 0;
     padding: 12px 24px;
-    background: #ff5e78;
+    background: #795548; /* cokelat utama */
     color: white;
     border: none;
     border-radius: 8px;
@@ -84,7 +84,7 @@ td {
 }
 
 .btn:hover {
-    background: #e64a64;
+    background: #5D4037; /* saat hover */
 }
 
 /* Responsive Enhancements */
@@ -107,4 +107,3 @@ td {
         margin: 10px 0;
     }
 }
-

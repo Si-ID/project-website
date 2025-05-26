@@ -35,36 +35,12 @@ $detail = mysqli_query($koneksi,
     <title>Struk Pembelian</title>
     <link rel="stylesheet" href="CSS/struk.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
 
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #f8f9fa; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
-      <!-- Logo -->
-    <div style="font-weight: bold; font-size: 28px; color: #333;">Thrifture<span style="color: brown;">.</span>
-    </div>
-
-     <!-- Tombol Kembali Modern -->
-    <a href="index.php" style="
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      background-color: white;
-      border: 2px solid #c0392b;
-      color: brown;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    "
-    onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
-    onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
-    <i class="fas fa-arrow-right"></i> Kembali </a>
-    </header>
-
     <div class="receipt">
-        <h1>Struk Pembelian</h1>
+        <h1>Struk Pembelian</h1><br>
         <p><strong>No. Transaksi:</strong> <?= $transaksi['id_transaksi'] ?></p>
         <p><strong>Tanggal:</strong> <?= date('d/m/Y H:i', strtotime($transaksi['tanggal_transaksi'] ?? 'now')) ?></p>
         <p><strong>Pelanggan:</strong> <?= htmlspecialchars($transaksi['nama']) ?></p>
@@ -99,5 +75,6 @@ $detail = mysqli_query($koneksi,
             <button onclick="window.print()" class="btn">Cetak Struk</button>
         </div>
     </div>
+
 </body>
 </html>

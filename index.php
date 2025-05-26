@@ -43,7 +43,7 @@ $products[] = $row;
       <a href="#home">home</a>
       <a href="#about">about</a>
       <a href="#products">products</a>
-      <a href="#contact">contact</a>
+      <a href="#founder">founder</a>
     </nav>
 
     <div class="icons">
@@ -69,7 +69,7 @@ $products[] = $row;
 </div>
   </header>
 
-  <section class="home" id="home" style="background: url('assets/bg.png') no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center;">>
+  <section class="home" id="home" style="background: url('assets/bg.png') no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center;">
     <div class="content">
       <h3>Thrifture</h3>
       <span>sustainable style, affordable price</span>
@@ -162,46 +162,61 @@ $products[] = $row;
       <?php endforeach; ?>
     </div>
 
-    <section class="contact" id="contact">
-      <h1 class="heading"><span> contact </span> us </h1>
-      <div class="row">
-        <form action="">
-          <input type="text" placeholder="name" class="box">
-          <input type="email" placeholder="email" class="box">
-          <input type="number" placeholder="number" class="box">
-          <textarea name="" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
-          <input type="submit" value="send message" class="btn">
-        </form>
-
-        <div class="image">
-          <img src="assets/cnt.png" alt="">
+    <section id="founder" class="founder-section">
+      <h1 class="heading"><span>Our </span>Founder</h1><br><br>
+ 
+    
+    <div class="founder-grid">
+      <!-- Founder 1 -->
+      <div class="founder-card">
+        <img src="assets/founder1.jpg" alt="Founder 1" class="founder-photo" />
+        <div class="founder-info">
+          <h3>Novaldo Putra Nugraha</h3>
+          <p>Co-Founder & CEO</p>
+          <p>
+            Dengan semangat untuk menciptakan perubahan dalam dunia fashion, 
+            <strong>Novaldo Putra Nugraha</strong> berkomitmen untuk membangun Thrifture sebagai platform thrifting yang terpercaya.
+          </p>
         </div>
       </div>
+
+      <!-- Founder 2 -->
+      <div class="founder-card">
+        <img src="assets/founder2.jpg" alt="Founder 2" class="founder-photo" />
+        <div class="founder-info">
+          <h3>Naftali Margareta Gultom</h3>
+          <p>Co-Founder & CTO</p>
+          <p>
+            <strong>Naftali Margareta Gultom</strong> memadukan teknologi dan kreativitas untuk menghadirkan pengalaman berbelanja thrift yang modern, cepat, dan ramah pengguna.
+          </p>
+        </div>
+       </div>
+      </div>
     </section>
+
 
 
     <section class="footer">
         <div class="footer-box">
           <h3>quick links</h3>
-          <a href="#">home</a>
-          <a href="#">about</a>
-          <a href="#">products</a>
-          <a href="#">contact</a>
+          <a href="#home">home</a>
+          <a href="#about">about</a>
+          <a href="#products">products</a>
+          <a href="#contact">contact</a>
         </div>
 
         <div class="footer-box">
           <h3>extra links</h3>
-          <a href="#">my account</a>
-          <a href="#">my order</a>
-          <a href="#">my favorite</a>
+          <a href="user.php">my account</a>
+          <a href="cart.php">my order</a>
         </div>
 
         <div class="footer-box">
           <h3>locations</h3>
-          <a href="#">bekasi</a>
-          <a href="#">ciamis</a>
-          <a href="#">malang</a>
-          <a href="#">cikarang</a>
+          <a>bekasi</a>
+          <a>ciamis</a>
+          <a>malang</a>
+          <a>cikarang</a>
         </div>
 
         

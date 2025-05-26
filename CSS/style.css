@@ -26,18 +26,18 @@ section{
   color:#333;
   padding: 1rem;
   margin: 2rem 0;
-  background: rgba(255, 51 , 153, .05);
+  background: #fff9f3;
 }
 
 .heading span{
-  color: brown;
+  color:  #5c4033;
 }
 
 .btn{
   display: inline-block;
   margin-top: 1rem;
   border-radius: 5rem;
-  background: #333;
+  background: #5c4033;
   color: #fff;
   padding: .9rem 3.5rem;
   cursor: pointer;
@@ -51,7 +51,7 @@ section{
 header{
   position: fixed;
   top: 0; left: 0; right: 0;
-  background: white ;
+  background: #fff9f3 ;
   padding: 2rem 9%;
   display: flex;
   align-items: center;
@@ -73,7 +73,7 @@ header .logo span{
 header .navbar a{
   font-size: 2rem;
   padding: 0 1.5 rem;
-  color: #666;
+  color: #5c4033;
    margin: 0 15px;
 }
 
@@ -83,7 +83,7 @@ header .navbar a:hover{
 
 header .icons a{
   font-size: 2.5rem;
-  color: #333;
+  color: #5c4033;
   margin-left: 1.5rem;
 }
 
@@ -128,7 +128,7 @@ header .fa-bars{
 
 .home .content span{
   font-size: 2.5rem;
-  color: rgb(117, 71, 45);
+  color: #8b4513;
   padding: 1rem 0;
   line-height: 1.5;
 }
@@ -217,7 +217,7 @@ header .fa-bars{
 }
 
 .user-welcome span {
-  color: orange;
+  color: #a0522d;
   font-weight: 600;
 }
 
@@ -227,15 +227,15 @@ header .fa-bars{
 
     
     .logout-btn {
-      color: #666;
-      font-size: 1.5rem; /* Match other icons */
+      color: #8b5e3c;
+      font-size: 1.5rem; 
       cursor: pointer;
       margin-left: 0.5rem;
       transition: .2s linear;
     }
     
     .logout-btn:hover {
-      color: #ff7800;
+      color: brown;
       transform: rotate(360deg);
     }
     
@@ -308,7 +308,7 @@ header .fa-bars{
 
 .about .content p {
   font-size: 1.05rem;
-  color: #666;
+  color: #5c4033;
   padding: 0.5rem 0;
   line-height: 1.7;
 }
@@ -320,14 +320,14 @@ header .fa-bars{
 }
 
 .about .btn:hover {
-  background-color: #dc3545;
+  background-color: #8b4513;
   color: #fff;
 }
 
 
 
 .icons-container{
-  background: #eee;
+  background: #f7f0e6;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -356,7 +356,7 @@ header .fa-bars{
 }
 
 .icons-container .icons span{
-  color: #999;
+  color: #8c7153;
   font-size: 1.3rem
 }
 
@@ -415,7 +415,7 @@ header .fa-bars{
 }
 
 .products .box-container .box .image .icons a:hover{
-  background: #333;
+  background: #5c4033;
 }
 
 .products .box-container .box .content{
@@ -435,57 +435,88 @@ header .fa-bars{
   padding-top: 1rem;
 }
 
-.contact .row{
+.founder-section {
+  padding: 60px 20px;
+  color: #4e342e;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.founder-section h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #3e2723;
+}
+
+.founder-grid {
   display: flex;
-  flex-wrap: wrap-reverse;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.founder-card {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  background-color: #fffaf5;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-.contact .row form{
-  flex: 1 1 40rem;
-  padding: 2rem 2.5rem;
-  box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
-  border: .1rem solid rgba(0,0,0,.1);
-  background: #fff;
-  border-radius: .5rem;
+.founder-card:hover {
+  transform: scale(1.02);
+}
+
+.founder-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #a1887f;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.founder-info {
+  text-align: center;
+}
+
+.founder-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.founder-info p {
+  font-size: 1.8rem;
+  line-height: 1.6;
 }
 
 
-.contact .row image{
-  flex: 1 1 40rem;
-}
+@media (min-width: 768px) {
+  .founder-grid {
+    flex-direction: row;
+    justify-content: center;
+  }
 
-.contact .row image img{
-  width: 100%;
-}
+  .founder-card {
+    flex: 1;
+    max-width: 450px;
+  }
 
-.contact .row form .box{
-  padding: 1rem;
-  font-size: 1.7rem;
-  color: #333;
-  text-transform: none;
-  border: .1rem solid rgba(0,0,0,.1);
-  border-radius: .5rem;
-  margin: .7rem 0; 
-  width: 100%;
-}
-
-.contact .row form .box:focus{
-  border-color: brown;
-}
-
-
-.contact .row form textarea{
-  height: 15rem;
-  resize: none;
+  .founder-info {
+    text-align: left;
+  }
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  background-color: #f9f9f9;
+  background-color: #f3e9e1;
   padding: 20px 50px;
   gap: 20px;
 }
@@ -514,3 +545,4 @@ header .fa-bars{
 .footer-box a:hover {
   color: #000;
 }
+

@@ -1,62 +1,111 @@
-
 body {
     background-color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #4E342E; /* dark brown text */
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: rgba(255, 51 , 153, .05);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 
-.navbar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    margin-right: 1rem;
-}
-    
-.navbar .brand {
-    flex-grow: 1;
-    font-size: 1.2rem;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 20px;
-    color: brown;
-}
-        
-.user-info i {
-    margin-right: 5px;
-}
-
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
 }
 
-.brand{
-  text-align: center;
-  font-size: 4rem;
-  color:#333;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
+
+svg {
+    width: 30px;
 }
 
+form h2 {
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #5D4037; /* dark brown */
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-.brand span{
-  color: brown;
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group input,
+.form-group select {
+    border: none;
+    border-radius: 12px;
+    padding: 12px 16px;
+    background-color: #fff;
+    font-size: 0.95rem;
+    box-shadow: inset 0 0 0 1px #D7CCC8;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.3); /* light brown focus */
+    border-color: #8D6E63;
+}
+
+button[name="submit"] {
+    width: 100%;
+    background-color: #6D4C41;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button[name="submit"]:hover {
+    background-color: #5D4037;
+}
+
+form p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #6D4C41;
+}
+
+form p a {
+    color: #5D4037;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+form p a:hover {
+    text-decoration: underline;
+}
+
+.bg-img {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 50%;
+}
+
+.msg {
+    font-size: 0.85rem;
+    color: #B71C1C;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.alert {
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    background-color: rgba(141, 110, 99, 0.1);
+    border: 1px solid #D7CCC8;
+    color: #5D4037;
 }
 
 
@@ -70,16 +119,16 @@ header{
     transition: all 0.3s ease-in-out;
 }
 
-h2 {
+.container .h2 {
     font-size: 28px;
     font-weight: bold;
-    color: #8b0000; /* deep red */
+    color: #5D4037; /* cokelat tua */
     margin-bottom: 30px;
     text-align: center;
 }
 
 /* Tabel biodata modern dan menarik */
-.table {
+.container .table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 12px;
@@ -93,29 +142,27 @@ h2 {
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
+} 
 
 .table th {
-    background-color: #fceff1;
-    color: #8b0000;
+    background-color: #efebe9; 
+    color: #5D4037;
     font-weight: 600;
     width: 40%;
-}
+}s
 
 .table td {
     background-color: #fff;
     color: #333;
 }
 
-/* Hover effect untuk interaktivitas */
 .table tr:hover td {
-    background-color: #fef2f2;
+    background-color: #f5f0ee; 
     transition: background-color 0.3s ease;
 }
 
-
 button {
-    background-color: #8b0000;
+    background-color: #795548;
     color: white;
     border: none;
     padding: 10px 18px;
@@ -128,7 +175,7 @@ button {
 }
 
 button:hover {
-    background-color: #a00000;
+    background-color: #5D4037;
 }
 
 @media (max-width: 768px) {

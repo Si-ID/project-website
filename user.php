@@ -22,10 +22,11 @@ $user = mysqli_fetch_assoc($result);
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="CSS/output.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
 
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #f8f9fa; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #fff9f3; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
       <!-- Logo -->
     <div style="font-weight: bold; font-size: 28px; color: #333;">Thrifture<span style="color: brown;">.</span>
     </div>
@@ -36,8 +37,8 @@ $user = mysqli_fetch_assoc($result);
       align-items: center;
       gap: 8px;
       padding: 10px 16px;
-      background-color: white;
-      border: 2px solid #c0392b;
+      background-color: #fff9f3;
+      border: 2px solid #5c4033;
       color: brown;
       border-radius: 8px;
       text-decoration: none;
@@ -45,11 +46,10 @@ $user = mysqli_fetch_assoc($result);
       transition: all 0.3s ease;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     "
-    onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
-    onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+    onmouseover="this.style.backgroundColor='#5c4033'; this.style.color='#fff9f3';"
+    onmouseout="this.style.backgroundColor='#fff9f3'; this.style.color='#5c4033';">
     <i class="fas fa-arrow-right"></i> Kembali </a>
     </header>
-
 
   <div class="container">
     <h2 class="text-center mb-4">Biodata Customer</h2>
@@ -80,6 +80,8 @@ $user = mysqli_fetch_assoc($result);
         <button class="button" onclick="window.location.href='profil.php'">Edit</button>
     </form>
   </div>
+
+  <img class="bg-img" src="assets/nav.jpeg" alt="bg_image">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>

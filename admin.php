@@ -74,25 +74,14 @@ $products = mysqli_query($koneksi, "SELECT * FROM baju ORDER BY id_baju");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Thrifture</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        img { max-width: 100px; height: auto; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; }
-        .form-group input { width: 100%; padding: 8px; }
-        .btn { padding: 8px 15px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
-        .btn-danger { background-color: #f44336; }
-        .update-all-container { margin-top: 20px; text-align: right; }
-    </style>
+    <link rel="stylesheet" href="CSS/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
+
     <div class="container">
         <h1>Admin Panel - Kelola Produk</h1>
-        
         <h2>Tambah Produk Baru</h2>
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">

@@ -70,7 +70,7 @@ function updateCart() {
         `;
     });
     
-    listCartHTML.innerHTML = html || '<p>Keranjang kosong</p>';
+    listCartHTML.innerHTML = html || '<p>   Keranjang kosong</p>';
     
     // Add event listeners to quantity controls
     document.querySelectorAll('.minus').forEach(button => {

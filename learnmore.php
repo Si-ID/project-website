@@ -10,10 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
 
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #f8f9fa; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #fff9f3; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);">
       <!-- Logo -->
     <div style="font-weight: bold; font-size: 28px; color: #333;">Thrifture<span style="color: brown;">.</span>
     </div>
@@ -24,8 +25,8 @@
       align-items: center;
       gap: 8px;
       padding: 10px 16px;
-      background-color: white;
-      border: 2px solid #c0392b;
+      background-color: #fff9f3;
+      border: 2px solid #5c4033;
       color: brown;
       border-radius: 8px;
       text-decoration: none;
@@ -33,13 +34,14 @@
       transition: all 0.3s ease;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     "
-    onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
-    onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+    onmouseover="this.style.backgroundColor='#5c4033'; this.style.color='white';"
+    onmouseout="this.style.backgroundColor='white'; this.style.color='#5c4033';">
     <i class="fas fa-arrow-right"></i> Kembali </a>
     </header>
 
 
-  <header class="hero d-flex flex-column justify-content-center align-items-center text-center text-white">
+  <header class="hero d-flex flex-column justify-content-center align-items-center text-center text-white"
+          style="height: 80vh; background: url('assets/bglm.jpg') center/cover no-repeat; padding: 0 20px;">
     <h1 class="display-4 fw-bold">Apa itu Thrifture?</h1>
     <p class="lead mt-2">Platform thrifting modern — hemat, keren, dan peduli lingkungan 🌿</p>
     <a href="register.php" class="btn btn-light mt-3 fw-semibold px-4 py-2 rounded-pill shadow-sm">Gabung Sekarang</a>
@@ -75,10 +77,10 @@
       <h2 class="fw-bold text-danger mb-4">Galeri Thrifture</h2>
       <?php
         $images = [
-          "https://images.unsplash.com/photo-1592878894089-bdc90c76ec89",
-          "https://images.unsplash.com/photo-1578985545062-69928b1d9587",
-          "https://images.unsplash.com/photo-1600180758890-6d8b6e7e8a46",
-          "https://images.unsplash.com/photo-1520975698519-59f2e57a9c53"
+          "assets/ayaya.jpg",
+          "assets/oyoyo.jpg",
+          "assets/uyuyu.jpg",
+          "assets/eyeye.jpg"
         ];
         foreach ($images as $img) {
           echo "<div class='col-6 col-md-3 mb-4'><img src='$img' class='img-fluid rounded shadow-sm' alt='Galeri Item'></div>";
