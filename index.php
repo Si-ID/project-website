@@ -150,13 +150,6 @@ $products[] = $row;
           <div class="content">
             <h3><?php echo htmlspecialchars($product['nama_baju']); ?></h3>
             <div class="price">Rp. <?php echo number_format($product['harga'], 0, ',', '.'); ?></div>
-            <?php if($loggedIn && !$isAdmin): ?>
-              <!-- Hanya tampilkan Add to Cart untuk user biasa -->
-              <a href="add_to_cart.php?id_product=<?php echo $product['id_baju']; ?>" class="btn">Add to Cart</a>
-            <?php elseif(!$loggedIn): ?>
-              <!-- Tampilkan untuk guest -->
-              <a href="login.php?pesan=login_dulu" class="btn">Add to Cart</a>
-            <?php endif; ?>
           </div>
         </div>
       <?php endforeach; ?>
