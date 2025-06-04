@@ -1,9 +1,9 @@
 <?php
 
-    $host = "sql12.freesqldatabase.com";
-    $user = "sql12780537";
-    $pass = "AxPy15ZKVF";
-    $db   = "sql12780537";
+    $host = "localhost";
+    $user = "root";
+    $pass = "";
+    $db   = "projectweb";
     $koneksi = mysqli_connect("$host","$user","$pass","$db");
 
     if (!$koneksi) {
