@@ -6,7 +6,7 @@ $loggedIn = isset($_SESSION['email']);
 if($loggedIn) {
 
     $email = $_SESSION['email'];
-    $query = mysqli_query($koneksi, "SELECT id_user, nama,role FROM users WHERE email='$email'");
+    $query = mysqli_query($koneksi, "SELECT id_user, nama, username,role FROM users WHERE email='$email'");
     $user = mysqli_fetch_assoc($query);
     $isAdmin = ($user['role'] == 'admin');
 }
@@ -58,7 +58,7 @@ $products[] = $row;
         
         <div class="user-welcome">
             <a href="user.php?id_user=<?php echo $user['id_user'] ?>" class="fas fa-user"></a>
-            <span><?php echo htmlspecialchars($user['nama']); ?></span>
+            <span><?php echo htmlspecialchars($user['username']); ?></span>
         </div>
         <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
     <?php else: ?>
